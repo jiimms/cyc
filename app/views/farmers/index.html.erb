@@ -9,7 +9,7 @@
 				<%=link_to farmer.name, farmer_path(farmer)%>
 			</div>
 			<div class = "col col-md-5">
-				<%= farmer.bio%><%=link_to "...read more", "#"%>
+				<%= farmer.bio%><%=link_to "...read more", farmer_path(farmer)%>
 			</div>
 			<div class = "col col-md-4">
 				<%= link_to "Edit", edit_farmer_path(farmer)%>
@@ -19,5 +19,10 @@
 	<%end%>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<p>
 <p><%= link_to "Add New", new_farmer_path%></p>
 <p><%= link_to "Back to all Causes", root_path%></p>
