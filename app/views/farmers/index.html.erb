@@ -1,17 +1,22 @@
-<h1>Farmers#index</h1>
+<div class="jumbotron container" style="background-color:pink;">
+<h1>Farmers</h1>
 
-<table border = 2>
-<th> Name</th>
-<th>bio</th>
-<tr> 
+<div class="container">
 
-<% @farmers.each do |farmer|%>
-<td><%= link_to farmer.name, farmer_path(farmer)%></td>
-<td><%= farmer.bio%></td>
-<td><%= link_to "Edit", edit_farmer_path(farmer)%></td>
-<td><%= link_to "Delete", farmer, method: :delete, data: {confirm: "sure?"} %></td>
-</tr>
-<%end%>
-</table>
+	<% @farmers.each do |farmer|%>
+		<div  class ="row" style="background-color:pink;">
+			<div class = "col col-md-3">
+				<%=link_to farmer.name, farmer_path(farmer)%>
+			</div>
+			<div class = "col col-md-5">
+				<%= farmer.bio%><%=link_to "...read more", "#"%>
+			</div>
+			<div class = "col col-md-4">
+				<%= link_to "Edit", edit_farmer_path(farmer)%>
+				<%= link_to "Delete", farmer, method: :delete, data: {confirm: "sure?"} %>
+			</div>
+		</div>
+	<%end%>
+</div>
 
 <p><%= link_to "Add New", new_farmer_path%></p>
