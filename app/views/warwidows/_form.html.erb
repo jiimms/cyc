@@ -1,0 +1,9 @@
+<%= form_for @warwidow do |warwidow|%>
+<%= warwidow.label :name%>
+<%= warwidow.text_field :name %><br>
+<%= warwidow.label :bio%>
+<%= warwidow.text_field :bio%><br>
+<%= warwidow.label :bankDetails%>
+<%= warwidow.text_field :bankDetails%><br>
+<p><%= warwidow.submit "Add"%></p>
+<% end %>

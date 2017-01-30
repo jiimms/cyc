@@ -1,0 +1,2 @@
+class Warwidow < ApplicationRecord
+end

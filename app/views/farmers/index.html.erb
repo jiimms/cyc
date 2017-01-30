@@ -1,0 +1,17 @@
+<h1>Farmers#index</h1>
+
+<table border = 2>
+<th> Name</th>
+<th>bio</th>
+<tr> 
+
+<% @farmers.each do |farmer|%>
+<td><%= link_to farmer.name, farmer_path(farmer)%></td>
+<td><%= farmer.bio%></td>
+<td><%= link_to "Edit", edit_farmer_path(farmer)%></td>
+<td><%= link_to "Delete", farmer, method: :delete, data: {confirm: "sure?"} %></td>
+</tr>
+<%end%>
+</table>
+
+<p><%= link_to "Add New", new_farmer_path%></p>

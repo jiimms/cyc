@@ -1,0 +1,8 @@
+<h1> <%= @farmer.name.split(' ')[0] %>'s Profile</h1>
+
+<p>Name: <%=@farmer.name%></p>
+Story: <%=@farmer.bio%>
+
+<p><%= link_to "Add New", new_farmer_path%></p>
+
+<p><%= link_to "Back to Farmer's list", farmers_path%></p>
