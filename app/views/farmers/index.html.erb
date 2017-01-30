@@ -1,10 +1,10 @@
-<div class="jumbotron container" style="background-color:pink;">
+<div class="jumbotron container" style="background-color:silver;">
 <h1>Farmers</h1>
 
 <div class="container">
 
 	<% @farmers.each do |farmer|%>
-		<div  class ="row" style="background-color:pink;">
+		<div  class ="row">
 			<div class = "col col-md-3">
 				<%=link_to farmer.name, farmer_path(farmer)%>
 			</div>
@@ -20,3 +20,4 @@
 </div>
 
 <p><%= link_to "Add New", new_farmer_path%></p>
+<p><%= link_to "Back to all Causes", root_path%></p>
