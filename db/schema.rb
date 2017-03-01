@@ -12,22 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170301112621) do
 
-  create_table "educations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "bio"
-    t.string   "bankDetails"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "farmers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "bio"
-    t.string   "bankDetails"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -46,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170301112621) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "names", force: :cascade do |t|
     t.string   "bio"
     t.string   "bankDetails"
@@ -83,4 +68,6 @@ ActiveRecord::Schema.define(version: 20170301112621) do
     t.datetime "updated_at",  null: false
   end
 
+=======
+>>>>>>> 59068db06449224d25ff555afbe51eeb4b1b79dc
 end
