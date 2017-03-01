@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   root  'home#index'
 
-  get 'pages/about'
 
-<<<<<<< HEAD
  	 devise_scope :user do
   	get 'login', to: 'devise/sessions#create'
   	get 'logout', to: 'devise/sessions#destroy'
@@ -19,9 +17,6 @@ Rails.application.routes.draw do
 	end
 
 
-=======
-  devise_for :members
   
->>>>>>> 59068db06449224d25ff555afbe51eeb4b1b79dc
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
