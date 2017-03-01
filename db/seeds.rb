@@ -19,5 +19,12 @@ user.first_name = 'Bobby'
 user.last_name = 'Donor'
 user.password = 'secret'
 user.email="bobdonor@gmail.com"
-user.UserType_id = 1
+user.UserType_id = 2
+user.save!
+
+user.first_name = 'Bobby'
+user.last_name = 'Recepient'
+user.password = 'secret'
+user.email="bobrecepient@gmail.com"
+user.UserType_id = 3
 user.save!
