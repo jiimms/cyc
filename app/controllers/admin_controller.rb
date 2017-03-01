@@ -1,7 +1,11 @@
 class AdminController < ApplicationController
+
   def dashboard
   end
 
-  def index
+  def all_users
+
+  	@users = User.all
+  	
   end
 end

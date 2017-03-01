@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
  
+  get 'recepient/dashboard'
+
+  get 'donor/dashboard'
+
+  resources :user_types
   get 'admin/dashboard'
 
-  get 'admin/index'
+  get 'admin/all_users', to: 'admin#all_users'
 
   devise_for :users, controllers: {registrations: 'user/registrations'}
   get 'home/index'

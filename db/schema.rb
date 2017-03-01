@@ -10,32 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301112621) do
+ActiveRecord::Schema.define(version: 20170301144928) do
 
-  create_table "members", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.index ["email"], name: "index_members_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
-  end
-
-<<<<<<< HEAD
-  create_table "names", force: :cascade do |t|
-    t.string   "bio"
-    t.string   "bankDetails"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "user_types", force: :cascade do |t|
+    t.string   "user_role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,23 +31,14 @@ ActiveRecord::Schema.define(version: 20170301112621) do
     t.string   "last_sign_in_ip"
     t.string   "firstname"
     t.string   "lastname"
-    t.integer  "user_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "UserType_id"
+    t.index ["UserType_id"], name: "index_users_on_UserType_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "warwidows", force: :cascade do |t|
-    t.string   "name"
-    t.string   "bio"
-    t.string   "bankDetails"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-=======
->>>>>>> 59068db06449224d25ff555afbe51eeb4b1b79dc
 end
