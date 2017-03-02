@@ -1,5 +1,6 @@
 class UserTypesController < ApplicationController
   before_action :set_user_type, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :authenticate_user!
 
   # GET /user_types
   # GET /user_types.json
@@ -69,6 +70,6 @@ class UserTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_type_params
-      params.fetch(:user_type, {})
+      params.require(:user_type).permit(:user_role)
     end
 end

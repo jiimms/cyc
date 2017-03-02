@@ -11,7 +11,7 @@ user.first_name = 'Bob'
 user.last_name = 'Admin'
 user.password = 'secret'
 user.email="bobadmin@gmail.com"
-user.UserType_id = 1
+user.user_type_id = 1
 user.save!
 
 
@@ -19,12 +19,19 @@ user.first_name = 'Bobby'
 user.last_name = 'Donor'
 user.password = 'secret'
 user.email="bobdonor@gmail.com"
-user.UserType_id = 2
+user.user_type_id = 2
 user.save!
 
 user.first_name = 'Bobby'
 user.last_name = 'Recepient'
 user.password = 'secret'
 user.email="bobrecepient@gmail.com"
-user.UserType_id = 3
+user.user_type_id = 3
 user.save!
+
+# user.first_name = 'Bobby'
+# user.last_name = 'Guest'
+# user.password = 'secret'
+# user.email="bobguest@gmail.com"
+# user.user_type_id = 4
+# user.save!

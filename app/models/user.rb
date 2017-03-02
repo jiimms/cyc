@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :user_type
+
 
 def full_name
 	return "#{first_name} #{last_name}".strip if(first_name || last_name)
@@ -11,19 +13,19 @@ def full_name
 end
 
 	def is_admin?(user)
-		if user.UserType_id == 1
+		if user.user_type_id == 1
 		return true
 		end 
 		
 	end
 	def is_donor?(user)
-		if user.UserType_id == 2
+		if user.user_type_id == 2
 		return true
 		end 
 		
 	end
 	def is_recepient?(user)
-		if user.UserType_id == 3
+		if user.user_type_id == 3
 		return true
 		end 
 		

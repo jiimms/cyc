@@ -1,0 +1,33 @@
+<div class="page-header">
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>User Role</th>
+      <th>Email Address</th>
+      <th>Registered on</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.id, "#"%></td>
+        <td><%= user.user_type.user_role.present? ? user.user_type.user_role : user.id %></td>
+        <td><%= user.email %></td>
+        <td><%=l user.created_at %></td>
+        <td>
+          <%= link_to "Show", "#", :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Edit" ,"#", :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Delete","#",
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
