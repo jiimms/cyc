@@ -1,5 +1,6 @@
 <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#"><%- link_to "DashBoard", admin_dashboard_path, class: '' %></a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li role="presentation"><%= link_to "DashBoard", admin_dashboard_path, class: 'btn btn-default' %></a></li>
+  <li role="presentation"><%= link_to "Users", admin_dashboard_path, class: 'btn btn-default' %></a></li>
+  <li role="presentation"><%= link_to "Stories", admin_dashboard_path, class: 'btn btn-default' %></a></li>
 </ul>
+<hr>
