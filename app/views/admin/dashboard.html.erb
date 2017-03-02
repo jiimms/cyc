@@ -1,2 +1,16 @@
 <h1>Admin#dashboard</h1>
 <p>Find me in app/views/admin/dashboard.html.erb</p>
+
+<div class="row">
+	<div class="col-md-4">
+		<button class="btn btn-lg btn-primary"><%= link_to "Users", admin_all_users_path %></button>
+	</div>
+
+		<div class="col-md-4">
+		<button class="btn btn-lg btn-primary"><%= link_to "Stories", admin_all_users_path %></button>
+	</div>
+
+		<div class="col-md-4">
+		<button class="btn btn-lg btn-primary"><%= link_to "Settings", admin_all_users_path %></button>
+	</div>
+</div>

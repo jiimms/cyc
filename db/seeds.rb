@@ -10,7 +10,7 @@ user = User.new
 user.first_name = 'Bob'
 user.last_name = 'Admin'
 user.password = 'secret'
-user.email="bobadmin@gmail.com"
+user.email="bob@gmail.com"
 user.user_type_id = 1
 user.save!
 
