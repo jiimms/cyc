@@ -1,2 +1,70 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class = "jumbotron">
+ 	<div class = "row">
+ 		<div class = "col col-md-10 col-md-offset-1">
+			<%= render 'layouts/navbar'%>
+		</div>
+	</div>
+	<div class = "container">
+	 	<div class = "row image_section">
+	 		<div class = "col col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+	 			<div class = "row images_123">
+		 			<div class = "col col-xs-10 col-sm-4 col-md-4 image_123">
+		 				<%= link_to image_tag("3.jpg"), root_path %>
+		 			</div>
+		 			<div class = "col col-xs-10  col-md-4 col-sm-4 image_123">
+		 				<%= link_to image_tag("2.jpg"), root_path %>
+		 			</div>
+		 			<div class = "col col-xs-10  col-md-4 col-sm-4 image_123">
+		 				<%= link_to image_tag("3.jpg"), root_path %>
+		 			</div>
+	 			</div>
+	 		</div>
+	 	</div> <!-- , :width => "125"-->
+
+	 	<div class = "row intro">
+	 		<div class = "col col-md-10 col-md-offset-1">
+	 			<h2> As easy as 1-2-3</h2>
+	 			<p>Charity is the act of helping the needy by providing them with sources that can be useful for them. Charity is one of the most generous acts. The greatest thing about charity is that it doesn’t always need to be big. But it is one of the toughest tasks to do. </p>
+
+	 			<p>We have broken it down for you here. You can be sure that your money is going to the person you intended it for.</p>
+	 		</div>
+	 	</div>
+
+    
+    	<div class = "row">
+ 			<div class = "col col-md-10 col-md-offset-1">
+      			<div class="row">
+        			<div class="col-md-4">
+        			<!--<%= link_to image_tag("2.jpg"), root_path,  class: "img-circle" %>-->
+			          <img class="img-circle" src="https://ctovision.com/wp-content/uploads/ngo_verification_social_good.jpg" alt="one image" width="140" height="140">
+			          <h2>Choose your Cause</h2>
+			          <p>Choose a cause that you are passionate about, be it child education, war widows, natural disaster survivers...Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+			          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			        </div><!-- /.col-md-4 -->
+			        <div class="col-md-4">
+			          <img class="img-circle" src="https://ctovision.com/wp-content/uploads/ngo_verification_social_good.jpg" alt="2 image" width="140" height="140">
+			          <h2>Choose Beneficiary</h2>
+			          <p>Second step is to choose beneficiary for your intended donation. The people here in the list have been verified, their background, addresses and their needs have been verified. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+			          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			        </div><!-- /.col-md-4 -->
+			        <div class="col-md-4">
+			          <img class="img-circle" src="https://ctovision.com/wp-content/uploads/ngo_verification_social_good.jpg" alt="3 image" width="140" height="140">
+			          <h2>Donate</h2>
+			          <p>Last step is to Donate directly to the recipients bank account and be sure that your money is being put to good use, making life just a bit easier for someone in distress. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo.</p>
+			          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			        </div><!-- /.col-md-4 -->
+     			 </div><!-- /.row -->
+
+			</div>
+		</div>
+    
+	    <div class = "footer">
+	      <%= render 'layouts/footer'%>  
+	    </div> 
+	</div><!-- /.container -->
+
+
+</div>
+
+   
+ 

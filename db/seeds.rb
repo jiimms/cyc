@@ -17,8 +17,6 @@ c.save!
 d = UserType.create(user_role:"Guest")
 d.save!
 
-
-
 user = User.new
 
 user.first_name = 'Bob'

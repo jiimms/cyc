@@ -1,3 +1,46 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+	padding-top: 20px;
+}
+img{
+	max-width:100%;
+	
+}
+
+.image_section {
+	height: 50vh;
+	/*border: 1px solid blue;*/
+}
+
+
+.image_123 {
+		
+}
+
+.intro {
+	/*border: 2px solid red;*/
+	margin-bottom: 30px;
+}
+
+.img-small{
+	border-radius: 85%;
+	background-color: blue;
+
+}
+
+.navbar-custom{
+	background-color:#336238;
+	color: black;
+	font-weight: bolder;
+}
+.navbar-wrapper {
+	margin-bottom: 40px;
+}
+
+footer{
+	background-color: gray;
+
+	/*padding: 0.5px;*/
+}
