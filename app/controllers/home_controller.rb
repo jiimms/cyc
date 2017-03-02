@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  skip_before_action :authenticate_user!
+  # skip_before_action :authenticate_user!
+  skip_before_filter :verify_authenticity_token
  
   def index
   if signed_in?
@@ -11,7 +12,11 @@ class HomeController < ApplicationController
       #redirect to donor root
       redirect_to donor_dashboard_path
     end
-  end
+
+    elsif current_user.is_recepient?(current_user)
+      #redirect to donor root
+      redirect_to recepient_dashboard_path
+    end
 
   end
 
