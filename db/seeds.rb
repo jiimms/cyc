@@ -5,6 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+a = UserType.create(user_role:"Admin")
+a.save!
+
+b = UserType.create(user_role:"Donor")
+b.save!
+
+c = UserType.create(user_role:"Recepient")
+c.save!
+
+d = UserType.create(user_role:"Guest")
+d.save!
+
 user = User.new
 
 user.first_name = 'Bob'
@@ -14,20 +26,23 @@ user.email="bob@gmail.com"
 user.user_type_id = 1
 user.save!
 
+user2 = User.new
 
-user.first_name = 'Bobby'
-user.last_name = 'Donor'
-user.password = 'secret'
-user.email="bobdonor@gmail.com"
-user.user_type_id = 2
-user.save!
+user2.first_name = 'Bobby'
+user2.last_name = 'Donor'
+user2.password = 'secret'
+user2.email="bobdonor@gmail.com"
+user2.user_type_id = 2
+user2.save!
 
-user.first_name = 'Bobby'
-user.last_name = 'Recepient'
-user.password = 'secret'
-user.email="bobrecepient@gmail.com"
-user.user_type_id = 3
-user.save!
+user3 = User.new
+
+user3.first_name = 'Bobby'
+user3.last_name = 'Recepient'
+user3.password = 'secret'
+user3.email="bobrecepient@gmail.com"
+user3.user_type_id = 3
+user3.save!
 
 # user.first_name = 'Bobby'
 # user.last_name = 'Guest'
