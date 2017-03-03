@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -60,7 +61,7 @@
         <%if current_user.user_type_id == 1 %>
           <ul class="nav navbar-nav">
             <li><%= link_to "Manage Users", admin_all_users_path  %></li>
-            <li><%= link_to "Manage Projects", "/path2"  %></li>
+            <li><%= link_to "Manage Stories", "/path2"  %></li>
             <li><%= link_to "Link6", "/path3"  %></li>
           </ul>
         <% end %>   

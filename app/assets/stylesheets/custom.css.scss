@@ -17,11 +17,16 @@ html,
 body {
     height: 100%;
 }
+hr.vertical
+{
+   width: 1px;
+   height: 20px;
+} 
 .card {
     box-shadow: 1px 1px 1px 1px grey;
     margin-left: 25px !important;
     text-align: center;
-    padding: 20px;
+    padding: 100px;
 }
 .mycarousel {
    position: relative;
