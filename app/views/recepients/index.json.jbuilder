@@ -1,0 +1,1 @@
+json.array! @recepients, partial: 'recepients/recepient', as: :recepient

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  about_info: MyString
+  home_address: MyString
+  country_of_origin: MyString
+  reason_to_help: MyString
+
+two:
+  about_info: MyString
+  home_address: MyString
+  country_of_origin: MyString
+  reason_to_help: MyString

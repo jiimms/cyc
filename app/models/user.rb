@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :user_type
+  has_many :recepients
+  has_many :donors
 
 
 def full_name

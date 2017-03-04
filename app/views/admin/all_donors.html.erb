@@ -1,0 +1,57 @@
+<%= render 'menu'%>
+<%- model_class = Donor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<%if @donors %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th> Donor Email </th>
+      <th> Donor Names </th>
+      <th><%= model_class.human_attribute_name(:about_info) %></th>
+      <th><%= model_class.human_attribute_name(:home_address) %></th>
+      <th><%= model_class.human_attribute_name(:country_of_origin) %></th>
+      <th><%= model_class.human_attribute_name(:reason_to_help) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @donors.each do |donor| %>
+      <tr>
+        <td><%= link_to donor.id, donor_path(donor) %></td>
+        <td><%= donor.user.email %></td>
+        <td><%= donor.user.full_name %></td>
+        <td><%= donor.about_info %></td>
+        <td><%= donor.home_address %></td>
+        <td><%= donor.country_of_origin %></td>
+        <td><%= donor.reason_to_help %></td>
+        <td><%= donor.user_id %></td>
+        <td><%=l donor.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      donor_path(donor), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_donor_path(donor), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      donor_path(donor),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p class="lead"> No Donors registered yet</p>
+<% end %>
+
+
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_donor_path,
+            :class => 'btn btn-primary' %>

@@ -44,6 +44,8 @@ user3.email="bobrecepient@gmail.com"
 user3.user_type_id = 3
 user3.save!
 
+
+
 # user.first_name = 'Bobby'
 # user.last_name = 'Guest'
 # user.password = 'secret'
