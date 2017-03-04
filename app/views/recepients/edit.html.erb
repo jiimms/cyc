@@ -1,5 +1,7 @@
+<%= render 'recepients/menu'%>
+
 <%- model_class = Recepient -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <center><h3>Edit my profile </h3></center>
 </div>
 <%= render :partial => 'form' %>

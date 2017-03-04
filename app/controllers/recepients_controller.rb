@@ -1,30 +1,29 @@
 class RecepientsController < ApplicationController
-  before_action :set_recepient, only: [:show, :edit, :update, :destroy]
+  before_action :set_recepient, only: [:profile, :edit]
+  before_action :set_update, only: [:update, :show, :destroy]
 
-  # GET /recepients
-  # GET /recepients.json
-  def index
-    @recepients = Recepient.all
+
+  def dashboard
+
   end
 
-  # GET /recepients/1
-  # GET /recepients/1.json
+  def profile
+    render :edit
+    
+  end
+
   def show
   end
 
-  # GET /recepients/new
   def new
     @recepient = Recepient.new
   end
 
-  # GET /recepients/1/edit
   def edit
   end
 
-  # POST /recepients
-  # POST /recepients.json
   def create
-    @recepient = Recepient.new(recepient_params.merge(user_id: 3))
+    @recepient = Recepient.new(recepient_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @recepient.save
@@ -63,8 +62,17 @@ class RecepientsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_recepient
+    def set_update
       @recepient = Recepient.find(params[:id])
+
+      
+    end
+    def set_recepient
+      if params[:id]
+      @user = User.find(params[:id])
+      @id = @user.recepients[0].id
+      @recepient = Recepient.find(@id)
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

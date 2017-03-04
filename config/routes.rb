@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
  
-  resources :donors
-  resources :recepients
-  get 'recepient/dashboard'
+
+  get 'recepients/dashboard', to: 'recepients#dashboard'
+  get 'profile', to: 'recepients#profile'
 
   get 'donor/dashboard'
 
-  resources :user_types
   get 'admin/dashboard'
 
   get 'admin/all_users', to: 'admin#all_users'
@@ -18,6 +17,11 @@ Rails.application.routes.draw do
 
   root  'home#index'
 
+  resources :donors
+  resources :recepients do
+    resources :stories
+  end
+  resources :user_types
 
  	 devise_scope :user do
   	get 'login', to: 'devise/sessions#create'
