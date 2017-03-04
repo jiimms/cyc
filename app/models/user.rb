@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_attached_file :avatar, styles: { thumb: "100x100!", small: "200x200#", medium: "300x300#" }, default_url: "2.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   belongs_to :user_type
   has_many :recepients
   has_many :donors

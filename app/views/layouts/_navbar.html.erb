@@ -1,30 +1,47 @@
-<div class="navbar-wrapper">
+<nav class="navbar-custom navbar navbar-default navbar-static-top">
   <div class="container">
-    <nav class="navbar navbar-inverse navbar-static-top navbar-custom">
-      <div class="container">
-        <div class="navbar-header">
-          <%= link_to "CyC", root_path, id: "logo", class: "navbar-brand" %>
-        </div>
-        <div id="navbar" class="navbar navbar-right">
-          <ul class="nav navbar-nav list_color">
-            <li class="active"><%= link_to "Home", "#"%></li>
-            <li><%= link_to "About", "#"%></li>
-            <li><%= link_to "Contact", "#"%></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Cat 1" , "#" %></li>
-                <li><%= link_to "Cat 2" , "#" %></li>
-                <li><%= link_to "Cat 3" , "#" %></li>
-                <li><%= link_to "Cat 4" , "#" %></li>
-                <li><%= link_to "Cat 5" , "#" %></li>
-                <li><%= link_to "Cat 6" , "#" %></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CyC</a>
+    </div>
 
-  </div>
-</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 navbar-custom">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path  %></li>
+        <li><%= link_to "About", "#"  %></li>
+        <li><%= link_to "Contact", "#"  %></li>    
+      </ul>
+   
+      <ul class="nav navbar-nav navbar-right">
+        <%if current_user %>  
+          <%if current_user.user_type_id == 1 %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Manage Users", admin_all_users_path  %></li>
+              <li><%= link_to "Manage Stories", "/path2"  %></li>
+              <li><%= link_to "Link6", "/path3"  %></li>
+            </ul>
+          <% end %>   
+
+          <li class="dropdown">
+            <a href="properties.php?type=showall" class="dropdown-toggle" data-toggle="dropdown">
+            <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile/Dashboard", user_path(current_user) %></li>
+              <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+              <li><%= link_to "Login", login_path  %></li>
+              <li><%= link_to "signup", signup_path  %></li>
+            </ul>
+          </li>
+        <% end %> 
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
