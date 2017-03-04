@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302050637) do
+ActiveRecord::Schema.define(version: 20170304131630) do
+
+  create_table "donors", force: :cascade do |t|
+    t.string   "about_info"
+    t.string   "home_address"
+    t.string   "country_of_origin"
+    t.string   "reason_to_help"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
+
+  create_table "recepients", force: :cascade do |t|
+    t.string   "about_info"
+    t.string   "home_address"
+    t.string   "country_of_origin"
+    t.string   "reason_for_need"
+    t.string   "need_amount"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
 
   create_table "user_types", force: :cascade do |t|
     t.string   "user_role"

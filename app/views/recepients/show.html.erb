@@ -1,0 +1,27 @@
+<%- model_class = Recepient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:about_info) %>:</strong></dt>
+  <dd><%= @recepient.about_info %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:home_address) %>:</strong></dt>
+  <dd><%= @recepient.home_address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country_of_origin) %>:</strong></dt>
+  <dd><%= @recepient.country_of_origin %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reason_for_need) %>:</strong></dt>
+  <dd><%= @recepient.reason_for_need %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:need_amount) %>:</strong></dt>
+  <dd><%= @recepient.need_amount %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              recepients_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_recepient_path(@recepient), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              recepient_path(@recepient),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

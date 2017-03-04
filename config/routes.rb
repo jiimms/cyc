@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  resources :donors
+  resources :recepients
   get 'recepient/dashboard'
 
   get 'donor/dashboard'
@@ -9,8 +11,10 @@ Rails.application.routes.draw do
 
   get 'admin/all_users', to: 'admin#all_users'
 
+  get 'admin/all_recepients', to: 'admin#all_recepients'
+  get 'admin/all_donors', to: 'admin#all_donors'
+
   devise_for :users, controllers: {registrations: 'user/registrations'}
-  get 'home/index'
 
   root  'home#index'
 

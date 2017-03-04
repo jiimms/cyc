@@ -9,6 +9,17 @@ before_action :ensure_admin!
   	
   end
 
+  def all_recepients
+
+    @recepients = Recepient.all
+
+    
+  end
+  def all_donors
+    @donors = Donor.all
+    
+  end
+
 
   private
   def ensure_admin!
