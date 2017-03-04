@@ -30,17 +30,30 @@ img{
 
 }
 
-.navbar-custom{
-	background-color:#336238;
-	color: black;
-	font-weight: bolder;
-}
-.navbar-wrapper {
-	margin-bottom: 40px;
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+
+   .carousel-caption {
+    top: 0;
+    bottom: auto;
+    max-width: 100%;
+   /* background-color: rgba(0,0,0,0.5);*/
+    /*background-color: #73c2fb;*/
+    color: blue;
+    opacity: 0.2;
+    padding-bottom: 0;
+    padding-top: 0;
+     
+    	p{
+    		margin-top: 0;
+        font-size: 1.5em;
+    	}
+
+      h3{
+       font-size: 3em; 
+      }
 }
 
-footer{
-	background-color: gray;
-
-	/*padding: 0.5px;*/
-}

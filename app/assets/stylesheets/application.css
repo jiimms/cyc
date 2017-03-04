@@ -6,3 +6,14 @@
  *= require_tree .
  *= require font-awesome
 */
+/*Navbar*/
+
+.navbar-custom{
+    background-color: #73c2fb !important;
+    opacity: 0.8;
+    padding-top: 10px;
+}
+
+.navbar-custom a {
+	font-weight: bold;
+}
