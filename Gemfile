@@ -22,6 +22,8 @@ gem 'devise-bootstrap-views'
 
 gem 'bootstrap-sass'
 
+gem 'nested_scaffold'
+
 gem 'will_paginate', '~> 3.1.0'
 
 gem "font-awesome-rails"

@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
 before_action :ensure_admin!
+
   def dashboard
   end
 

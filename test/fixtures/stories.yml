@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recepients: one
+  title: MyString
+  body: MyString
+  category: MyString
+
+two:
+  recepients: two
+  title: MyString
+  body: MyString
+  category: MyString

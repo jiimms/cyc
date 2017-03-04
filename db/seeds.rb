@@ -44,6 +44,16 @@ user3.email="bobrecepient@gmail.com"
 user3.user_type_id = 3
 user3.save!
 
+recep = Recepient.new
+
+recep.about_info = "I am a young 18 year old, living in Japan"
+recep.home_address = "Okinawa"
+recep.country_of_origin = "Japan"
+recep.reason_for_need = "I would like to buy shoes and a bicycle"
+recep.need_amount = "150usd"
+recep.user_id = 3
+
+recep.save!
 
 
 # user.first_name = 'Bobby'
