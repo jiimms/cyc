@@ -1,0 +1,8 @@
+<div class="form-group">
+           <div class="col-md-6 no-padding">
+          <%= f.label :user_type_id %>
+
+          <% options = [["Donor",2], ["Recepient",3], ["Guest",4]] %>
+          <%= f.select :user_type_id, options,{}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </div>
+      </div>

@@ -12,10 +12,10 @@ class User < ApplicationRecord
   has_many :donors
 
 
-def full_name
-	return "#{first_name} #{last_name}".strip if(first_name || last_name)
-	"Anonymus"
-end
+# def full_name
+# 	return "#{first_name} #{last_name}".strip if(first_name || last_name)
+# 	"Anonymus"
+# end
 
 	def is_admin?(user)
 		if user.user_type_id == 1
