@@ -55,7 +55,8 @@ recep.need_amount = "150usd"
 recep.user_id = 3
 recep.save!
 
-recep.stories.create(recepient_id:1, title:"Help to buy Medicine", body:"I have a wound that has never healed since the time I was a little child. I have gone to hospital severally but the doctors say that I can never be well. I can barely walk", category:"Medical")
+recep.stories.new(recepient_id:1, title:"Help to buy Medicine", body:"I have a wound that has never healed since the time I was a little child. I have gone to hospital severally but the doctors say that I can never be well. I can barely walk", category:"Medical")
+recep.save!
 
 donor = Donor.new
 
@@ -67,8 +68,8 @@ donor.reason_to_help = "To make the worl a better place"
 donor.user_id = 2
 donor.save!
 
-donor.donations.create(recepient_id: 1,donor_id:1, name:"Buy shoes for Bobby Recepient", amount:"10")
-
+donor.donations.new(recepient_id: 1,donor_id:1, name:"Buy shoes for Bobby Recepient", amount:"10")
+donor.save!
 
 
 # user.first_name = 'Bobby'
