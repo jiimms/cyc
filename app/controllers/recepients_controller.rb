@@ -1,15 +1,13 @@
 class RecepientsController < ApplicationController
-  before_action :set_recepient, only: [:profile]
+  before_action :set_recepient, only: [:profile, :edit, :dashboard]
   before_action :set_update, only: [:update, :show, :destroy]
 
 
   def dashboard
-    
-
   end
 
   def profile
-    render :edit
+    # render :edit
     
   end
 
@@ -68,14 +66,7 @@ class RecepientsController < ApplicationController
     end
 
     def set_recepient
-      @user = User.find(params[:id])
-      @id = @user.recepients[0].id
-      @recepient = Recepient.find(@id)
-      # if params[:id]
-      # @user = User.find(params[:id])
-      # @id = @user.recepients[0].id
-      # @recepient = Recepient.find(@id)
-      # end
+      @recepient = Recepient.where(user_id: current_user.id)[0]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

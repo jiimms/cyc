@@ -1,0 +1,26 @@
+
+<%- model_class = Story -%>
+<div class="page-header">
+  <h1 align="center">All Stories</h1>
+</div>
+<table class="table table-striped">
+    <% @stories.each do |story| %>
+      <div class="card col-md-3">
+    <i class="fa fa-bookmark-o fa-3x"></i>
+    <h3><%= story.title %></h3>
+      <h5><%= story.body %></h5>
+      <h6 class="muted"></h6>
+      <p><a class="btn btn-default" href="#" role="button">Read more »</a></p>
+      <p class="muted">Created: <%= time_ago_in_words(story.created_at) %> ago.. by <%=link_to story.recepient.user.first_name, "#" %></p>
+
+      <span class="muted label label-success">Cat</span>
+      <span class="muted label label-info">Education</span>
+      <hr>
+
+       <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+    </div>
+    <% end %>
+</table>
+
+

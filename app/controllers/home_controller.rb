@@ -11,11 +11,11 @@ class HomeController < ApplicationController
 
     elsif current_user.is_donor?(current_user)
       #redirect to donor root
-      redirect_to donors_dashboard_path
+      redirect_to donor_dashboard_path
 
     elsif current_user.is_recepient?(current_user)
       #redirect to rec root
-      redirect_to recepients_dashboard_path
+      redirect_to recepient_dashboard_path
     end
 
   end

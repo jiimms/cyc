@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
  
   #Recepient routes
-  get 'recepients/dashboard', to: 'recepients#dashboard'
+  get 'recepient/dashboard', to: 'recepients#dashboard'
   get 'profile', to: 'recepients#profile'
   #Donor routes
   get 'donor/dashboard'
+  get 'browse/stories', to: 'stories#stories'
   #Stories routes
   # get 'stories', to: 'stories#index'
   # post 'stories', to: 'stories#create'
