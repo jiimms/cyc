@@ -35,18 +35,16 @@ img{
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 100%;
-      height:100vh;
+      height:80vh;
       margin: auto;
   }
 
    .carousel-caption {
-    top: 0;
+    top: 40%;
     bottom: auto;
     max-width: 100%;
-   /* background-color: rgba(0,0,0,0.5);*/
-    /*background-color: #73c2fb;*/
-    color: blue;
-    opacity: 0.2;
+   background-color: rgba(0,0,0,0.5);
+    /*background-color: #d9edf7;*/
     padding-bottom: 0;
     padding-top: 0;
      
