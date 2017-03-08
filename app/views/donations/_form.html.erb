@@ -1,0 +1,51 @@
+<%= form_for([@donor, @donation], :html => { :class => "form-horizontal donation" }) do |f| %>
+
+  <% if @donation.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @donation.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%=f.error_span(:donor_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :donation_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control', placeholder: 'A name for the donation, you cannot change it later' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :amount, :class => 'form-control', placeholder: 'Amount in USD' %>
+    </div>
+    <%=f.error_span(:amount) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recepient_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :recepient_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:recepient_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                donor_donations_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,1 +1,105 @@
-<h3>Donor Dashboard</h3>
+
+<%= render 'menu'%>
+
+<%if @donor.present?%>
+<h4 align="center">Welcome back <%= @donor.user.full_name%></h4>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <i class="fa fa-users" style="font-size: 50px;"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Make a donation</h4>
+                            <p style="font-size: 12px;">Click here to view options</p>
+                            <button class="btn btn-primary btn-xs pull-right">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <%= link_to "Donations", donor_donations_path(@donor) %></button>
+                                <hr>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <i class="fa fa-user-secret" style="font-size: 50px;"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Stories I'm watching</h4>
+                            <p style="font-size: 12px;">Check Stories</p>
+                            <button class="btn btn-primary btn-xs pull-right">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <%= link_to "Stories", admin_all_donors_path %></button>
+                                
+                                </button>
+                                <hr>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <i class="fa fa-user-circle-o" style="font-size: 50px;"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Donation History</h4>
+                            <p style="font-size: 12px;">Recepient Stories, also found in Repients</p>
+                            <button class="btn btn-primary btn-xs pull-right">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Donations History</button>
+                                <hr>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+              <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <i class="fa fa-cogs" style="font-size: 50px;"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Settings</h4>
+                            <p style="font-size: 12px;">General profile settings</p>
+                            <button class="btn btn-primary btn-xs pull-right">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Settings</button>
+                                <hr>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<%else %>
+<center><h2>You have not completed your profile</h2></center>
+<h4>Please start by filling in your profile information to start making dnations</h4>
+
+<%= link_to "Complete Profile", new_donor_path, class: 'btn btn-lg btn-default' %>
+
+
+<%end %>

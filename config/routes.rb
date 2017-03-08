@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :donors do
+    resources :donations
+  end
   #Root route
   root  'home#index'
 
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   get 'recepient/dashboard', to: 'recepients#dashboard'
   get 'profile', to: 'recepients#profile'
   #Donor routes
-  get 'donor/dashboard'
+  get 'donor/dashboard', to: 'donors#dashboard'
   get 'browse/stories', to: 'stories#stories'
   #Stories routes
   # get 'stories', to: 'stories#index'
@@ -25,7 +28,6 @@ Rails.application.routes.draw do
   #Resources
   resources :users
   resources :user_types
-  resources :donors
   resources :recepients do
     resources :stories
   end

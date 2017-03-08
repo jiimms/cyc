@@ -53,12 +53,21 @@ recep.country_of_origin = "Japan"
 recep.reason_for_need = "I would like to buy shoes and a bicycle"
 recep.need_amount = "150usd"
 recep.user_id = 3
+recep.save!
 
 recep.stories.create(recepient_id:1, title:"Help to buy Medicine", body:"I have a wound that has never healed since the time I was a little child. I have gone to hospital severally but the doctors say that I can never be well. I can barely walk", category:"Medical")
 
+donor = Donor.new
 
-recep.save!
+donor.about_info = "Gofi Corporation is an agricultural firm looking to donate to someone"
+donor.home_address = "Berlin"
+donor.country_of_origin = "Germany"
+donor.reason_to_help = "To make the worl a better place"
+# donor.amount_available_to_help = "150usd"
+donor.user_id = 2
+donor.save!
 
+donor.donations.create(recepient_id: 1,donor_id:1, name:"Buy shoes for Bobby Recepient", amount:"10")
 
 
 
