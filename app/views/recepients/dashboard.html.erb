@@ -1,2 +1,15 @@
 <%= render 'menu'%>
 <h2>Welcom</h2>
+
+<%if @recepients%>
+<h2>Present</h2>
+
+
+<%else %>
+<h2>Not</h2>
+<h4>Please start by filling in your profile information to start posting stories</h4>
+
+<%= link_to "Complete Profile", new_recepient_path, class: 'btn btn-lg btn-default' %>
+
+
+<%end %>

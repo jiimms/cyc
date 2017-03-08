@@ -19,19 +19,16 @@
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <td><%= link_to story.id, story_path(story) %></td>
-        <td><%= story.recepients_id %></td>
+        <td><%= link_to story.id%></td>
+        <td><%= story.recepient_id %></td>
         <td><%= story.title %></td>
         <td><%= story.body %></td>
         <td><%= story.category %></td>
         <td><%=l story.created_at %></td>
         <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      story_path(story), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_story_path(story), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      story_path(story),
+          <%= link_to "Show", "#",:class => 'btn btn-default btn-xs' %>
+          <%= link_to "Edit","#", :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Delete", recepient_story_path(recepient_id: story.recepient_id, id:story.id),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>

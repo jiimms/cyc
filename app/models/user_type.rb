@@ -1,4 +1,6 @@
 class UserType < ApplicationRecord
 	has_many :users
-	# has_many :recepients, 
+	# has_many :recepients,
+
+
 end

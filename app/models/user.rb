@@ -16,6 +16,13 @@ def full_name
 	return "#{first_name} #{last_name}".strip if(first_name || last_name)
 	"Anonymus"
 end
+	def get_user_info(user)
+		if user.user_type_id == 3
+			# belongs_to :recepient
+			r = Recepient.where(user_id: user.id)
+			return r
+		end 	
+	 end 
 
 	def is_admin?(user)
 		if user.user_type_id == 1

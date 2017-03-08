@@ -1,5 +1,5 @@
-<%= form_for @story, :html => { :class => "form-horizontal story" } do |f| %>
 
+<%= form_for([@recepients[0], @story], :html => {recepient_id: current_user.id, :class => "form-horizontal story" }) do |f| %>
   <% if @story.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -16,11 +16,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :recepients_id, :class => 'control-label col-lg-2' %>
+    <%= f.label :id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :recepients_id, :class => 'form-control' %>
+      <%= f.text_field :id, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:recepients_id) %>
+    <%=f.error_span(:recepient_id) %>
   </div>
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-lg-2' %>
@@ -48,7 +48,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                stories_path, :class => 'btn btn-default' %>
+                recepient_stories_path, :class => 'btn btn-default' %>
     </div>
   </div>
 

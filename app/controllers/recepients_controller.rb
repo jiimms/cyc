@@ -1,9 +1,10 @@
 class RecepientsController < ApplicationController
-  before_action :set_recepient, only: [:profile, :edit]
+  before_action :set_recepient, only: [:profile]
   before_action :set_update, only: [:update, :show, :destroy]
 
 
   def dashboard
+    
 
   end
 
@@ -63,16 +64,18 @@ class RecepientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_update
-      @recepient = Recepient.find(params[:id])
-
-      
+      @recepient = Recepient.find(params[:id])     
     end
+
     def set_recepient
-      if params[:id]
       @user = User.find(params[:id])
       @id = @user.recepients[0].id
       @recepient = Recepient.find(@id)
-      end
+      # if params[:id]
+      # @user = User.find(params[:id])
+      # @id = @user.recepients[0].id
+      # @recepient = Recepient.find(@id)
+      # end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
