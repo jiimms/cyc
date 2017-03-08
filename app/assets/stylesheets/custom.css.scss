@@ -3,7 +3,12 @@
 
 }
 .foot {
-  position: fixed; bottom: 0
+
+  /*position: fixed; bottom: 0; */
+  background-color: #21292d !important;
+    opacity: 0.8;
+    padding:40px;
+
 }
 .icon-lg {
   font-size: 100px !important;
@@ -11,6 +16,13 @@
 
 .left-padding {
 	padding-left: 10px !important;
+}
+
+.child {
+  width: 100vw;/* <-- children as wide as the browser window (viewport) */
+  margin-left: calc(-1 * ((100vw - 100%) / 2));/* align left edge to the left edge of the viewport */
+  /* The above is basically saying to set the left margin to minus the width of the viewport MINUS the width of the parent, divided by two, so the left edge of the viewport */
+  height: 50px;
 }
 
 /*
@@ -30,9 +42,13 @@ hr.vertical
 } 
 .card {
     box-shadow: 1px 1px 1px 1px grey;
-    margin-left: 25px !important;
+    backgrund-color: yellow;
+    border-radius: 20px;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    margin-left: 70px !important;
     text-align: center;
-    padding: 100px;
+
 }
 .mycarousel {
    position: relative;
