@@ -44,6 +44,7 @@ user3.email="bobrecepient@gmail.com"
 user3.user_type_id = 3
 user3.save!
 
+
 recep = Recepient.new
 
 recep.about_info = "I am a young 18 year old, living in Japan"
@@ -53,7 +54,12 @@ recep.reason_for_need = "I would like to buy shoes and a bicycle"
 recep.need_amount = "150usd"
 recep.user_id = 3
 
+recep.stories.create(recepient_id:1, title:"Help to buy Medicine", body:"I have a wound that has never healed since the time I was a little child. I have gone to hospital severally but the doctors say that I can never be well. I can barely walk", category:"Medical")
+
+
 recep.save!
+
+
 
 
 # user.first_name = 'Bobby'
