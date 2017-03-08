@@ -30,9 +30,12 @@ img{
 
 }
 
+/*Carousel*/
+
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 100%;
+      height:100vh;
       margin: auto;
   }
 
@@ -57,3 +60,6 @@ img{
       }
 }
 
+.carousel-control:hover {
+   background-color: rgba(245, 245, 245, 0);
+}

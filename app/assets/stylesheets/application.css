@@ -17,3 +17,7 @@
 .navbar-custom a {
 	font-weight: bold;
 }
+
+.navbar {
+	margin-bottom: 0 !important;
+}

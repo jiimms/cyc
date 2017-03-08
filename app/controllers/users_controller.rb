@@ -21,10 +21,10 @@ class UsersController < ApplicationController
 				
 			end
 
-			def user_params
-				params.fetch(:user, {})
-
-			end
+			# def user_params
+			# 	params.fetch(:user, {})
+				
+			# end
 
 
 end
