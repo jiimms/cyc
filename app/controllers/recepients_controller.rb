@@ -1,6 +1,7 @@
 class RecepientsController < ApplicationController
   before_action :set_recepient, only: [:profile, :edit, :dashboard]
   before_action :set_update, only: [:update, :show, :destroy]
+  before_action :ensure_recepient!
 
 
   def dashboard
@@ -72,5 +73,13 @@ class RecepientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recepient_params
       params.require(:recepient).permit(:about_info, :home_address, :country_of_origin, :reason_for_need, :need_amount)
+    end
+
+    def ensure_recepient!
+      unless current_user.user_type_id == 3
+        flash[:danger] = "You must be a recepient to view this page"
+        redirect_to root_path
+      end
+      
     end
 end

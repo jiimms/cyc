@@ -12,7 +12,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails'
 gem 'devise'
 gem 'devise-bootstrap-views'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass','~> 3.0'
 
 gem 'nested_scaffold'
 

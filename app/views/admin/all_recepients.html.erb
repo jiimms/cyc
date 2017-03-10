@@ -9,12 +9,13 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th>Email</th>
       <th>Names</th>
-      <th><%= model_class.human_attribute_name(:about_info) %></th>
-      <th><%= model_class.human_attribute_name(:home_address) %></th>
-      <th><%= model_class.human_attribute_name(:country_of_origin) %></th>
-      <th><%= model_class.human_attribute_name(:reason_for_need) %></th>
-      <th><%= model_class.human_attribute_name(:need_amount) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>About Me</th>
+      <th>Home Address</th>
+      <th>Country of origin</th>
+      <th>Why I need the help</th>
+      <th>Help amount requested</th>
+      <th>Date of Registration</th>
+      <th>Status</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -22,7 +23,7 @@
     <% @recepients.each do |recepient| %>
       <tr>
         <td><%= link_to recepient.id, recepient_path(recepient) %></td>
-        <td><%= recepient.user.email %></td>
+        <td><%= link_to recepient.user.email,recepient_path(recepient) %></td>
         <td><%= recepient.user.full_name %></td>
         <td><%= recepient.about_info %></td>
         <td><%= recepient.home_address %></td>
@@ -30,9 +31,9 @@
         <td><%= recepient.reason_for_need %></td>
         <td><%= recepient.need_amount %></td>
         <td><%=l recepient.created_at%></td>
+        <td><span class="label label-info">Approved<span></td>
         <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      recepient_path(recepient), :class => 'btn btn-default btn-xs' %>
+       
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_recepient_path(recepient), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
