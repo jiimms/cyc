@@ -1,0 +1,13 @@
+language: ruby
+
+rvm:
+  - 2.4.0
+services:
+  - postgresql
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
+
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
