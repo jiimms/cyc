@@ -4,6 +4,11 @@ before_action :ensure_admin!
   def dashboard
   end
 
+  def all_stories
+    @stories = Story.all
+    
+  end
+
   def all_users
 
   	@users = User.all

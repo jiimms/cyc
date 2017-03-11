@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   #Admin routes
   get 'admin/dashboard'
   get 'admin/all_users', to: 'admin#all_users'
+  get 'admin/all_stories', to: 'admin#all_stories'
   get 'admin/all_recepients', to: 'admin#all_recepients'
   get 'admin/all_donors', to: 'admin#all_donors'
 

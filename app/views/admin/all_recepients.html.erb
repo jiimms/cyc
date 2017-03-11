@@ -33,10 +33,12 @@
         <td><%=l recepient.created_at%></td>
         <td><span class="label label-info">Approved<span></td>
         <td>
-       
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_recepient_path(recepient), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+         <%= link_to "Block User",
+                      recepient_path(recepient),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+          <%= link_to "btn-xs",
                       recepient_path(recepient),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
