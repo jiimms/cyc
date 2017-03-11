@@ -1,7 +1,8 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
 
-<% @categories.each do |cat|%>
-<%= cat.title%>
+<h1> <%= (@category.title)== "" ? "Category Title" : "#{@category.title}"%>
+	
+</h1>
 
-<%end%>
+<p> This Category has people who were displaced recently due to Cyclone hoopoe.
+This cyclone hit the coastal areas with extreme severity and about 50000 people were displaced.<br>This above is Sample description</p>
+<p><%= @category.description%></p>

@@ -21,10 +21,10 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Profile/Dashboard", user_path(current_user) %></li>
-              <li><%= link_to "Logout", logout_path %></li>
-              <li><%= link_to "Login", login_path  %></li>
-              <li><%= link_to "signup", signup_path  %></li>
+              <% category_list.each do |cl| %>
+              <li><%= link_to cl.title, category_path(cl)%></li>
+              <%end%>
+              
             </ul>
           </li>
 
