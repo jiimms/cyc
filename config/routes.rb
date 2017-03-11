@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'categories/show'
+
+  get 'categories/new'
+
+  get 'categories/edit'
+
   resources :donors do
     resources :donations
   end
@@ -26,6 +32,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'user/registrations'}
 
   #Resources
+  resources :categories
   resources :users
   resources :user_types
   resources :recepients do

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   belongs_to :user_type
+  belongs_to :category
   has_many :recepients
   has_many :donors
 

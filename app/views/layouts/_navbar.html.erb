@@ -14,6 +14,20 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path  %></li>
         <li><%= link_to "Stories", browse_stories_path  %></li>
+
+        <li class="dropdown">
+            <a href="properties.php?type=showall" class="dropdown-toggle" data-toggle="dropdown">
+            <%= "Categories" %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile/Dashboard", user_path(current_user) %></li>
+              <li><%= link_to "Logout", logout_path %></li>
+              <li><%= link_to "Login", login_path  %></li>
+              <li><%= link_to "signup", signup_path  %></li>
+            </ul>
+          </li>
+
         <li><%= link_to "About", "#"  %></li>
         <li><%= link_to "Contact", "#"  %></li>    
       </ul>
