@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def category_list
-		cat=Category.all
+		Category.all
 	end
 	
 end
