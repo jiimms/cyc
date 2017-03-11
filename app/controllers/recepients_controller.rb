@@ -72,7 +72,7 @@ class RecepientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recepient_params
-      params.require(:recepient).permit(:about_info, :home_address, :country_of_origin, :reason_for_need, :need_amount)
+      params.require(:recepient).permit(:about_info, :home_address, :country_of_origin, :reason_for_need, :need_amount, :avatar)
     end
 
     def ensure_recepient!

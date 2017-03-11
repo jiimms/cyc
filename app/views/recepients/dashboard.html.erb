@@ -1,8 +1,9 @@
 <%= render 'menu'%>
 
+
 <%if @recepient.present?%>
 <h4>Welcome back <%= @recepient.user.full_name%></h4>
-
+<%=image_tag(@recepient.user.avatar.url(:thumb))%> <!--thumb: "100x100!", small: "200x200#", medium: "300x300#" change as per need -->
 
 <%else %>
 <center><h2>You have not completed your profile</h2></center>
@@ -12,3 +13,5 @@
 
 
 <%end %>
+
+
