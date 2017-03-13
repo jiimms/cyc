@@ -3,7 +3,6 @@
 <div class="page-header">
   <h1 align="center">All Stories</h1>
 </div>
-<table class="table table-striped">
     <% @stories.each do |story| %>
       <div class="card col-md-3">
     <i class="fa fa-bookmark-o fa-3x"></i>
@@ -19,6 +18,5 @@
        <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
     </div>
     <% end %>
-</table>
 
 
