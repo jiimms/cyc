@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :about_info, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :about_info, :class => 'form-control' %>
+      <%= f.text_area :about_info, :class => 'form-control' %>
     </div>
     <%=f.error_span(:about_info) %>
   </div>
@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :reason_for_need, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :reason_for_need, :class => 'form-control' %>
+      <%= f.text_area :reason_for_need, :class => 'form-control' %>
     </div>
     <%=f.error_span(:reason_for_need) %>
   </div>
@@ -50,6 +50,18 @@
     </div>
     <%=f.error_span(:need_amount) %>
   </div>
+
+  <% if not @recepient.category_id %>
+         <div class="form-group">
+          <%= f.label :category_id, :class => 'control-label col-lg-2' %>
+
+           <div class="col-md-6 ">
+
+          <% options = [["Widow",1], ["Natural Disaster",2], ["Medical Illness",3], ["Education",4], ["Other", 5]] %>
+          <%= f.select :category_id, options,{}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </div>
+      </div>
+      <%end %>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

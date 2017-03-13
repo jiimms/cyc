@@ -1,0 +1,38 @@
+<%if not current_user %>
+<p align="center" class="label col-md-12" style="background: #aacbe4;padding: 20px;">Please login to see more options</p>
+
+
+<%elsif current_user.user_type_id == 1%>
+  <%= render 'admin/menu'%>
+
+<%elsif current_user.user_type_id == 2%>
+  <%= render 'donors/menu'%>
+
+
+<%elsif current_user.user_type_id == 3%>
+  <%= render 'recepients/menu'%>
+
+<%else%>
+
+<p class="label label-success">Please login to see more options</p>
+
+<% end %>
+
+<%- model_class = Category -%>
+<div class="page-header">
+  <h1 align="center">All Categories</h1>
+<%if current_user and current_user.user_type_id == 1%><%= link_to "Add Category", new_category_path, {:style=>'color:#FFFFFF;', :class => 'pull-right btn btn-primary'} %><%end%>
+
+</div>
+    <% @categories.each do |category| %>
+    <div class="card col-md-3" style="width: 20rem;">
+      <!-- <img class="card-img-top" src="..." alt="Card image cap"><%#= category.avatar %> -->
+      <div style="background: grey;"></div>
+      <div class="card-block">
+        <h4 class="card-title"><%= category.title %></h4>
+        <p class="card-text"><%= category.description %></p>
+        <%= link_to "View  <i class='fa fa-eye'></i>".html_safe, recepient_category_path(category_id:category.id), {:style=>'color:#333;', :class => 'pull-right btn btn-default'} %>
+        
+      </div>
+    </div>
+    <% end %>

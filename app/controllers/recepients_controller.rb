@@ -1,10 +1,16 @@
 class RecepientsController < ApplicationController
   before_action :set_recepient, only: [:profile, :edit, :dashboard]
   before_action :set_update, only: [:update, :show, :destroy]
-  before_action :ensure_recepient!
+  before_action :ensure_recepient!, except: [:categories]
+  before_action :authenticate_user!, except: [:categories]
 
 
   def dashboard
+  end
+
+  def categories
+    @recepients = Recepient.where(category_id: params[:category_id])
+    
   end
 
   def profile
@@ -36,8 +42,6 @@ class RecepientsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /recepients/1
-  # PATCH/PUT /recepients/1.json
   def update
     respond_to do |format|
       if @recepient.update(recepient_params)
@@ -50,8 +54,6 @@ class RecepientsController < ApplicationController
     end
   end
 
-  # DELETE /recepients/1
-  # DELETE /recepients/1.json
   def destroy
     @recepient.destroy
     respond_to do |format|
@@ -72,7 +74,7 @@ class RecepientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recepient_params
-      params.require(:recepient).permit(:about_info, :home_address, :country_of_origin, :reason_for_need, :need_amount)
+      params.require(:recepient).permit(:about_info, :home_address, :country_of_origin, :reason_for_need, :need_amount, :avatar, :category_id)
     end
 
     def ensure_recepient!

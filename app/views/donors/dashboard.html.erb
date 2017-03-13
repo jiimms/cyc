@@ -3,7 +3,7 @@
 
 <%if @donor.present?%>
 <h4 align="center">Welcome back <%= @donor.user.full_name%></h4>
-
+<!--<%=image_tag(@donor.user.avatar.url(:thumb))%>  --><!--thumb: "100x100!", small: "200x200#", medium: "300x300#" change as per need -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">

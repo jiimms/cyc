@@ -1,0 +1,21 @@
+
+<%- model_class = Category -%>
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="..." alt="Card image cap"><%= @category.avatar %>
+  <div class="card-block">
+    <h4 class="card-title"><%= @category.title %></h4>
+    <p class="card-text"><%= @category.description %></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              categories_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_category_path(@category), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              category_path(@category),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310092548) do
+ActiveRecord::Schema.define(version: 20170312174241) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "avatar"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "donations", force: :cascade do |t|
     t.integer  "donor_id"
@@ -32,14 +40,6 @@ ActiveRecord::Schema.define(version: 20170310092548) do
     t.integer  "user_id"
   end
 
-  create_table "recepient_stories_approvals", force: :cascade do |t|
-    t.boolean  "approved"
-    t.integer  "recepient_id"
-    t.integer  "story_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "recepients", force: :cascade do |t|
     t.string   "about_info"
     t.string   "home_address"
@@ -49,13 +49,13 @@ ActiveRecord::Schema.define(version: 20170310092548) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "user_id"
+    t.integer  "category_id"
   end
 
   create_table "stories", force: :cascade do |t|
     t.integer  "recepient_id"
     t.string   "title"
     t.string   "body"
-    t.string   "category"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["recepient_id"], name: "index_stories_on_recepient_id"

@@ -1,21 +1,30 @@
 Rails.application.routes.draw do
 
+  get 'categories/show'
+
+  get 'categories/new'
+
+  get 'categories/edit'
+
   resources :donors do
     resources :donations
   end
+  #Categories route
+  get 'recepient/category', to: 'recepients#categories'
+  get 'browse/categories', to: 'categories#index'
+
   #Root route
   root  'home#index'
 
  
   #Recepient routes
   get 'recepient/dashboard', to: 'recepients#dashboard'
+  get 'browse/recepients', to: 'recepients#index'
   get 'profile', to: 'recepients#profile'
   #Donor routes
   get 'donor/dashboard', to: 'donors#dashboard'
   get 'browse/stories', to: 'stories#stories'
-  #Stories routes
-  # get 'stories', to: 'stories#index'
-  # post 'stories', to: 'stories#create'
+
   #Admin routes
   get 'admin/dashboard'
   get 'admin/all_users', to: 'admin#all_users'
@@ -27,6 +36,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'user/registrations'}
 
   #Resources
+  resources :categories
   resources :users
   resources :user_types
   resources :recepients do
