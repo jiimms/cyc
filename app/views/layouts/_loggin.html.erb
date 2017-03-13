@@ -1,0 +1,7 @@
+<%if not current_user%>
+<div class="alert alert-warning alert-dismissable page-alert"><button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+Please signup/login to see more details and to participate <%= link_to "Sign Up", signup_path, class: 'btn btn-warning'%></div>
+
+<%else%>
+
+<%end%>

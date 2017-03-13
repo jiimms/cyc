@@ -1,13 +1,16 @@
 class RecepientsController < ApplicationController
   before_action :set_recepient, only: [:profile, :edit, :dashboard]
   before_action :set_update, only: [:update, :show, :destroy]
-  before_action :ensure_recepient!, except: [:categories]
-  before_action :authenticate_user!, except: [:categories]
+  before_action :ensure_recepient!, except: [:categories, :index]
+  before_action :authenticate_user!, except: [:categories, :index]
 
 
   def dashboard
   end
-
+  def index
+    @recepients = Recepient.all
+    
+  end
   def categories
     @recepients = Recepient.where(category_id: params[:category_id])
     

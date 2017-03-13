@@ -1,48 +1,34 @@
+<%= render 'layouts/approval'%>
+<%if current_user%>
   <%= render 'recepients/menu'%>
+  <%end%>
 
 <%- model_class = Recepient -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1 align="center">Current Recepients</h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:about_info) %></th>
-      <th><%= model_class.human_attribute_name(:home_address) %></th>
-      <th><%= model_class.human_attribute_name(:country_of_origin) %></th>
-      <th><%= model_class.human_attribute_name(:reason_for_need) %></th>
-      <th><%= model_class.human_attribute_name(:need_amount) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
     <% @recepients.each do |recepient| %>
-      <tr>
-        <td><%= link_to recepient.id, recepient_path(recepient) %></td>
-        <td><%= recepient.about_info %></td>
-        <td><%= recepient.home_address %></td>
-        <td><%= recepient.country_of_origin %></td>
-        <td><%= recepient.reason_for_need %></td>
-        <td><%= recepient.need_amount %></td>
-        <td><%=l recepient.created_at %></td>
-        <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      recepient_path(recepient), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_recepient_path(recepient), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      recepient_path(recepient),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <% if recepient.user.approval == true%>
+      <div class="card col-md-3">
+    <i class="fa fa-user fa-3x"></i>
+    <h3><%= recepient.user.first_name %></h3>
+      <h5><%= recepient.about_info%></h5>
+      <hr>
+      <h5><h6><b>Reason for assistance</b></h6><%= recepient.reason_for_need%></h5>
+      <h6 class="muted"><b><i>Home location and Amount of need</i></b></h6>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_recepient_path,
-            :class => 'btn btn-primary' %>
+      <h5><span class="fa fa-map-marker red"></span> <%= recepient.home_address%>,<%= recepient.country_of_origin%>,<span style="margin-right: 30px;"></span><span class="fa fa-money green"></span> <%= recepient.need_amount%></h5>
+      <hr>
+      <p class="muted">Created: <%= time_ago_in_words(recepient.created_at) %> ago.. by <%=link_to recepient.user.first_name, "#" %></p>
+
+      <span class="muted"><i>Category:</i></span><span class="muted label label-info"> <%= recepient.category.title%></span>
+      <hr>
+
+       <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+    </div>
+    <% end %>
+    <% end %>
+
+
+

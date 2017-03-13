@@ -17,10 +17,4 @@ private
     @user = User.find(params[:id])
   end
 
-    # def user_params
-    #   params.fetch(:user, {})
-      
-    # end
-
-
 end

@@ -1,3 +1,4 @@
+<%= render 'layouts/approval'%>
 
 <%= form_for([@recepient, @story], :html => {recepient_id: current_user.id, :class => "form-horizontal story" }) do |f| %>
   <% if @story.errors.any? %>
@@ -30,14 +31,6 @@
     </div>
     <%=f.error_span(:body) %>
   </div>
-  <div class="form-group">
-    <%= f.label :category, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :category, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:category) %>
-  </div>
-
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>

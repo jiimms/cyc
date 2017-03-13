@@ -24,24 +24,27 @@ user.last_name = 'Admin'
 user.password = 'secret'
 user.email="bob@gmail.com"
 user.user_type_id = 1
+user.approval = 1
 user.save!
 
 user2 = User.new
 
-user2.first_name = 'Bobby'
+user2.first_name = 'Jack'
 user2.last_name = 'Donor'
 user2.password = 'secret'
 user2.email="bobdonor@gmail.com"
 user2.user_type_id = 2
+user2.approval = 1
 user2.save!
 
 user3 = User.new
 
-user3.first_name = 'Bobby'
+user3.first_name = 'Mary'
 user3.last_name = 'Recepient'
 user3.password = 'secret'
 user3.email="bobrecepient@gmail.com"
 user3.user_type_id = 3
+user3.approval = 1
 user3.save!
 
 user4 = User.new
@@ -51,6 +54,7 @@ user4.last_name = 'Recepient'
 user4.password = 'secret'
 user4.email="janerecepient@gmail.com"
 user4.user_type_id = 3
+user4.approval = 1
 user4.save!
 
 #Category
@@ -110,7 +114,7 @@ recep2.about_info = "I am a young 18 year old, living in Japan"
 recep2.home_address = "Okinawa"
 recep2.country_of_origin = "Japan"
 recep2.reason_for_need = "I would like to buy shoes and a bicycle"
-recep2.need_amount = "150usd"
+recep2.need_amount = "60usd"
 recep2.category_id = 5
 recep2.user_id = 3
 recep2.save!
@@ -124,7 +128,7 @@ recep3.about_info = " I am a disaster surviver"
 recep3.home_address = "Syria, Moosul"
 recep3.country_of_origin = "Japan"
 recep3.reason_for_need = "Help in daily livelihood"
-recep3.need_amount = "150usd"
+recep3.need_amount = "10usd"
 recep3.category_id = 2
 recep3.user_id = 3
 recep3.save!

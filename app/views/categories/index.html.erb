@@ -1,5 +1,5 @@
 <%if not current_user %>
-<p align="center" class="label col-md-12" style="background: #aacbe4;padding: 20px;">Please login to see more options</p>
+<%= render 'layouts/loggin'%>
 
 
 <%elsif current_user.user_type_id == 1%>
@@ -18,12 +18,17 @@
 
 <% end %>
 
+
 <%- model_class = Category -%>
+
 <div class="page-header">
-  <h1 align="center">All Categories</h1>
+
+  <h3 align="center">All Categories</h3>
 <%if current_user and current_user.user_type_id == 1%><%= link_to "Add Category", new_category_path, {:style=>'color:#FFFFFF;', :class => 'pull-right btn btn-primary'} %><%end%>
+        <%= link_to "See all Recepients from all categories".html_safe,browse_recepients_path,  :class => 'btn btn-info'%>
 
 </div>
+
     <% @categories.each do |category| %>
     <div class="card col-md-3" style="width: 20rem;">
       <!-- <img class="card-img-top" src="..." alt="Card image cap"><%#= category.avatar %> -->

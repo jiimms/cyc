@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'admin/all_stories', to: 'admin#all_stories'
   get 'admin/all_recepients', to: 'admin#all_recepients'
   get 'admin/all_donors', to: 'admin#all_donors'
+  put 'admin/block/user', to: 'admin#block_user'
 
   #Devise
   devise_for :users, controllers: {registrations: 'user/registrations'}

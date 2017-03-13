@@ -1,0 +1,7 @@
+<%if current_user and current_user.approval == false%>
+<div class="alert alert-warning alert-dismissable page-alert"><button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+Please note that your Profile and Stories will not be shown tothe public since you have not been approved by the admin.Click here to contact Admin <%= link_to "Contact Admin", "#", class: 'btn btn-warning'%></div>
+
+<%else%>
+
+<%end%>

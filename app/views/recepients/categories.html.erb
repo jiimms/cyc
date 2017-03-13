@@ -1,5 +1,6 @@
 <%if not current_user %>
-<p align="center" class="label col-md-12" style="background: #aacbe4;padding: 20px;">Please login to see more options</p>
+<%= render 'layouts/loggin'%>
+
 
 
 <%elsif current_user.user_type_id == 1%>

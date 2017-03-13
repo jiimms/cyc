@@ -1,4 +1,4 @@
-
+<%= render 'layouts/approval'%>
 <%= render 'recepients/menu'%>
 <%- model_class = Story -%>
 <div class="page-header">
@@ -11,7 +11,6 @@
       <th><%= model_class.human_attribute_name(:recepients_id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:body) %></th>
-      <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -23,7 +22,6 @@
         <td><%= story.recepient_id %></td>
         <td><%= story.title %></td>
         <td><%= story.body %></td>
-        <td><%= story.category %></td>
         <td><%=l story.created_at %></td>
         <td>
           <%= link_to "Show", "#",:class => 'btn btn-default btn-xs' %>

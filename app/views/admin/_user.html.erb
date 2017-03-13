@@ -18,15 +18,24 @@
         <td><%= user.user_type.user_role.present? ? user.user_type.user_role : user.id %></td>
         <td><%= user.email %></td>
         <td><%=l user.created_at %></td>
-        <td><%=link_to "Pending Approval" ,"#", :class => 'btn btn-success btn-xs' %></td>
+        <td><%if user.approval == true %><%if user.user_type_id ==1 %><%=link_to "Approved" ,"#", :class => 'btn btn-success btn-xs' %><%else%><%=link_to "Approved" ,"#", :class => 'btn btn-success btn-xs' %><%end%>
+          <%else%>
+          <%=link_to "Not Approved" ,"#", :class => 'btn btn-danger btn-xs' %>
+          <% end %>
+        </td>
         <td>
           <%= link_to "Show", "#", :class => 'btn btn-default btn-xs' %>
           <%= link_to "Edit" ,"#", :class => 'btn btn-default btn-xs' %>
-          <%= link_to "Block User","#",
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-          <%= link_to "Delete","#",
+          <%if user.approval == true %>
+                <%if user.user_type_id ==1 %><%=link_to "Super Admin" ,"#", :class => 'disabled btn btn-success btn-xs' %><%else%>
+                   <%= link_to "Block User", admin_block_user_path(id: user.id, value: false), :method => :put, :class => 'btn btn-xs btn-danger' %>
+                 <%end%>
+                      <%else%>
+           <%= link_to "Approve", admin_block_user_path(id: user.id, value: true), :method => :put, :class => 'btn btn-xs btn-success'%>
+
+
+                      <% end %>
+          <%#= link_to "Delete","#",
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
