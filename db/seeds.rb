@@ -57,6 +57,16 @@ user4.user_type_id = 3
 user4.approval = 1
 user4.save!
 
+user4 = User.new
+
+user4.first_name = 'Kevin'
+user4.last_name = 'Recepient'
+user4.password = 'secret'
+user4.email="kevinrecepient@gmail.com"
+user4.user_type_id = 3
+user4.approval = 1
+user4.save!
+
 #Category
 cat = Category.new
 
@@ -116,7 +126,7 @@ recep2.country_of_origin = "Japan"
 recep2.reason_for_need = "I would like to buy shoes and a bicycle"
 recep2.need_amount = "60usd"
 recep2.category_id = 5
-recep2.user_id = 3
+recep2.user_id = 4
 recep2.save!
 
 recep2.stories.new(recepient_id:2, title:"Widowed for 5years", body:"I got asssistance and I now have a job in Japan")
@@ -130,10 +140,10 @@ recep3.country_of_origin = "Japan"
 recep3.reason_for_need = "Help in daily livelihood"
 recep3.need_amount = "10usd"
 recep3.category_id = 2
-recep3.user_id = 3
+recep3.user_id = 5
 recep3.save!
 
-recep3.stories.new(recepient_id:2, title:"Help granted", body:"I got asssistance and I now I can continue with my daily life. I will post pics soon")
+recep3.stories.new(recepient_id:3, title:"Help granted", body:"I got asssistance and I now I can continue with my daily life. I will post pics soon")
 recep3.save!
 
 donor = Donor.new

@@ -25,12 +25,12 @@
 
   <h3 align="center">All Categories</h3>
 <%if current_user and current_user.user_type_id == 1%><%= link_to "Add Category", new_category_path, {:style=>'color:#FFFFFF;', :class => 'pull-right btn btn-primary'} %><%end%>
-        <%= link_to "See all Recepients from all categories".html_safe,browse_recepients_path,  :class => 'btn btn-info'%>
+        <%= link_to "<i class='fa fa-list'></i> All".html_safe,browse_recepients_path,  :class => 'btn btn-default'%>
 
 </div>
 
     <% @categories.each do |category| %>
-    <div class="card col-md-3" style="width: 20rem;">
+    <div class="card03 col-md-3" style="width: 20rem;">
       <!-- <img class="card-img-top" src="..." alt="Card image cap"><%#= category.avatar %> -->
       <div style="background: grey;"></div>
       <div class="card-block">

@@ -61,10 +61,19 @@ hr.vertical
    width: 1px;
    height: 20px;
 } 
+.card03 {
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 10px;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    margin-left: 70px !important;
+    text-align: center;
+
+}
 .card {
     box-shadow: 1px 1px 1px 1px grey;
     backgrund-color: yellow;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-bottom: 10px !important;
     padding-top: 10px !important;
     margin-left: 70px !important;
