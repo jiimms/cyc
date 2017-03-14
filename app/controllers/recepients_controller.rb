@@ -13,12 +13,10 @@ class RecepientsController < ApplicationController
   end
   def categories
     @recepients = Recepient.where(category_id: params[:category_id])
-    
   end
 
   def profile
     # render :edit
-    
   end
 
   def show
@@ -37,10 +35,8 @@ class RecepientsController < ApplicationController
     respond_to do |format|
       if @recepient.save
         format.html { redirect_to @recepient, notice: 'Recepient was successfully created.' }
-        format.json { render :show, status: :created, location: @recepient }
       else
         format.html { render :new }
-        format.json { render json: @recepient.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,10 +45,8 @@ class RecepientsController < ApplicationController
     respond_to do |format|
       if @recepient.update(recepient_params)
         format.html { redirect_to @recepient, notice: 'Recepient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recepient }
       else
         format.html { render :edit }
-        format.json { render json: @recepient.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,7 +55,6 @@ class RecepientsController < ApplicationController
     @recepient.destroy
     respond_to do |format|
       format.html { redirect_to recepients_url, notice: 'Recepient was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

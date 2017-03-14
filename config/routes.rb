@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'admin/all_recepients', to: 'admin#all_recepients'
   get 'admin/all_donors', to: 'admin#all_donors'
   put 'admin/block/user', to: 'admin#block_user'
+  get 'admin/category/edit', to: 'categories#edit'
 
   #Devise
   devise_for :users, controllers: {registrations: 'user/registrations'}

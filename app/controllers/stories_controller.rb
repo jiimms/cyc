@@ -7,7 +7,6 @@ class StoriesController < ApplicationController
 
   def stories
     @stories = Story.all
-    
   end
   def index
     @stories = @recepient.stories
@@ -17,9 +16,7 @@ class StoriesController < ApplicationController
   end
 
   def new
-    # @story = 
     @story = @recepient.stories.build
-
   end
 
   def edit
@@ -57,7 +54,6 @@ class StoriesController < ApplicationController
     def set_story
       @story = @recepient.stories.find(params[:id])
     end
-
     # Only allow a trusted parameter "white list" through.
     def story_params
       params.require(:story).permit(:title, :body, :category, :avatar)

@@ -38,13 +38,19 @@
                         <div class="col-md-2">
                         <i class="fa fa-star"></i>
                         </div>
+                        <div class="pull-right" style="margin-right: 15px;">
+                        <%if current_user and current_user.user_type_id == 1%><%= link_to "<button class='btn btn-default'><i class='fa fa-pencil grey'></i></button>".html_safe, admin_category_edit_path(id: category.id), class: 'pull-ri' %><%end%>
+
+                          
+                        </div>
                         <div class="col-md-8">
                             <h4><%= category.title %></h4>
-                            <p style="font-size: 12px;"><%= category.description %></p>
+                            <p style="font-size: 10px;"><%= category.description %></p>
                             <button class="btn btn-info pull-right">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <%= link_to "View", recepient_category_path(category_id:category.id) %></button>
                                 <hr>
+
                         
                         </div>
                     </div>

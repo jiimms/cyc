@@ -24,19 +24,24 @@
   <h1 align="center"><%= @recepients[0].category.title%> Category</h1>
 </div>
     <% @recepients.each do |recepient| %>
-      <div class="card col-md-3">
-    <i class="fa fa-bookmark-o fa-3x"></i>
-    <h3><%= recepient.user.first_name %></h3>
-      <h5><%= truncate(recepient.about_info, length: 250, omission: '...(read more)') %></h5>
-      <h6 class="muted"></h6>
-      <p class="muted">Created: <%= time_ago_in_words(recepient.created_at) %> ago.. by <%=link_to recepient.user.first_name, "#" %></p>
+      <div class="card02 col-md-3">
+            <div class="panel panel-info">
+             <div class="panel-body">
 
-      Category: <span class="muted label label-info white"><%= recepient.category.title %></span>
-      <hr>
+                      <i class="fa fa-bookmark-o fa-3x pull-right blue"></i>
+                      <h3><%= recepient.user.first_name %></h3>
+                        <h5><%= truncate(recepient.about_info, length: 250, omission: '...(read more)') %></h5>
+                        <h6 class="muted"></h6>
+                        <p class="muted">Created: <%= time_ago_in_words(recepient.created_at) %> ago.. by <%=link_to recepient.user.first_name, "#" %></p>
 
-       <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-    </div>
+                        Category: <span class="muted label label-info white"><%= recepient.category.title %></span>
+                        <hr>
+
+                         <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+                         <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+                </div>
+            </div>
+        </div>
     <% end %>
 
 <% else %>

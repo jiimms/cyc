@@ -1,6 +1,8 @@
-<ul class="nav nav-pills">
+<ul class="nav nav-pills menu">
   <li role="presentation"><%= link_to "DashBoard", recepient_dashboard_path, class: '' %></a></li>
+  <%if @recepient.present?%>
   <li role="presentation"><%= link_to "My Profile", edit_recepient_path(id: current_user.id), class: '' %></a></li>
   <li role="presentation"><%= link_to "My Stories", recepient_stories_path(current_user.id), class: '' %></a></li>
+  <%end%>
 </ul>
 <hr>

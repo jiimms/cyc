@@ -3,7 +3,13 @@
 
 }
 .blue {
-  font-color: blue !important;
+  color: #94cfe0 !important;
+}
+.yellow {
+  color: yellow;
+}
+.grey {
+  color: grey;
 }
 .white {
   color: #ffffff;
@@ -61,6 +67,12 @@ hr.vertical
    width: 1px;
    height: 20px;
 } 
+ul.menu  li {
+ border: 1px solid black; 
+}
+a{
+  color: teal;
+}
 .card03 {
     box-shadow: 1px 1px 1px 1px grey;
     border-radius: 10px;
@@ -72,8 +84,13 @@ hr.vertical
 }
 
 .card02 {
-  max-height: 500px;
-  min-height: 100px;
+  max-height: 190px;
+  min-height: 150px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.card02>panel>panel-body>row>col-md-8> btn:a {
+  color: #fff;
 }
 .card {
     box-shadow: 1px 1px 1px 1px grey;
