@@ -12,7 +12,7 @@ before_action :set_user, only: [:block_user]
 
   def block_user
     if @user.update_attribute(:approval, params[:value])
-      redirect_to admin_all_users_path
+      redirect_to :back
     else
 
     end

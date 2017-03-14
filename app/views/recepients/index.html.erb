@@ -1,11 +1,12 @@
 <%= render 'layouts/approval'%>
-<%if current_user%>
+<%if current_user and current_user.user_type_id == 3%>
   <%= render 'recepients/menu'%>
   <%end%>
 
+<%if @recepients %>
 <%- model_class = Recepient -%>
 <div class="page-header">
-  <h1 align="center">Current Recepients</h1>
+  <h1 align="center">All Current Recepients</h1>
 </div>
     <% @recepients.each do |recepient| %>
     <% if recepient.user.approval == true%>
@@ -29,6 +30,12 @@
     </div>
     <% end %>
     <% end %>
+    <% else %>
+
+    <div class="jumbotron">
+      There are no recepients
+    </div>
+<% end %>
 
 
 

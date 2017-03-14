@@ -1,28 +1,26 @@
 <%=render 'menu'%>
-
+<h2 align="center">All Stories</h2>
 <%- model_class = Story -%>
 <div class="page-header">
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th>Email</th>
       <th>Full name</th>
       <th>Story Body</th>
 
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Story Status</th>
     </tr>
   </thead>
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <td><%= link_to story.id%></td>
         <td><%= story.recepient.user.full_name %></td>
         <td><%= story.recepient.user.email %></td>
         <td><%= story.body %></td>
 
-        <td><span class="label label-info">Approved<span></td>
+        <td><span class="label label-info">Approved User<span></td>
         <td>
      <%#= link_to "Block Story","#",
                       :method => :delete,

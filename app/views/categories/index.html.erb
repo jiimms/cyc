@@ -30,14 +30,25 @@
 </div>
 
     <% @categories.each do |category| %>
-    <div class="card03 col-md-3" style="width: 20rem;">
-      <!-- <img class="card-img-top" src="..." alt="Card image cap"><%#= category.avatar %> -->
-      <div style="background: grey;"></div>
-      <div class="card-block">
-        <h4 class="card-title"><%= category.title %></h4>
-        <p class="card-text"><%= category.description %></p>
-        <%= link_to "View  <i class='fa fa-eye'></i>".html_safe, recepient_category_path(category_id:category.id), {:style=>'color:#333;', :class => 'pull-right btn btn-default'} %>
-        
-      </div>
-    </div>
+
+            <div class="col-md-3 card02">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                        <i class="fa fa-star"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <h4><%= category.title %></h4>
+                            <p style="font-size: 12px;"><%= category.description %></p>
+                            <button class="btn btn-info pull-right">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <%= link_to "View", recepient_category_path(category_id:category.id) %></button>
+                                <hr>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <% end %>
