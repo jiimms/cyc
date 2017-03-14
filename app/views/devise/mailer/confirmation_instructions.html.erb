@@ -1,6 +1,11 @@
 <p><%= t('.greeting', recipient: @resource.email, default: "Welcome #{@resource.email}!") %></p>
 
-<p><%= t('.instruction', default: 'You can confirm your account email through the link below:') %></p>
+<p><%= t('.instruction', default: 'Thank you for signing up at CyC app. You can confirm your account email through the link below:') %></p>
 
 <p><%= link_to t('.action', default: 'Confirm my account'),
          user_confirmation_url(confirmation_token: @token, locale: I18n.locale) %></p>
+
+<p><%= t('.instruction', default: 'Feel free to reach out and contact us incase you have feedback or questions:') %></p>
+
+
+
