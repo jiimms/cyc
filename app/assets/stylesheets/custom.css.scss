@@ -18,11 +18,15 @@ a:link {
   color: #333;
 }
 
+.navbar-default .navbar-nav > li > a {
+color: #555 !important;
+}
+
 
 .foot {
 
   position: fixed; bottom: 0;
-  background-color: #aacbe4 !important;
+  background-color: #b5c9d8 !important;
     opacity: 0.8;
     padding:10px;
 
@@ -119,5 +123,120 @@ hr.vertical
 footer {
     margin: 50px 0;
 
+}
+
+.navbar-custom {
+  background-color: #aacbe4;
+  border-color: #91bcdc;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#d1e3f0), to(#aacbe4));
+  background-image: -webkit-linear-gradient(top, #d1e3f0, 0%, #aacbe4, 100%);
+  background-image: -moz-linear-gradient(top, #d1e3f0 0%, #aacbe4 100%);
+  background-image: linear-gradient(to bottom, #d1e3f0 0%, #aacbe4 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd1e3f0', endColorstr='#ffaacbe4', GradientType=0);
+}
+.navbar-custom .navbar-brand {
+  color: #333333;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #1a1a1a;
+  background-color: transparent;
+}
+.navbar-custom .navbar-text {
+  color: #333333;
+}
+.navbar-custom .navbar-nav > li:last-child > a {
+  border-right: 1px solid #91bcdc;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: #333333;
+  border-left: 1px solid #91bcdc;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #242020;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #242020;
+  background-color: #91bcdc;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#91bcdc), to(#b8d3e8));
+  background-image: -webkit-linear-gradient(top, #91bcdc, 0%, #b8d3e8, 100%);
+  background-image: -moz-linear-gradient(top, #91bcdc 0%, #b8d3e8 100%);
+  background-image: linear-gradient(to bottom, #91bcdc 0%, #b8d3e8 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff91bcdc', endColorstr='#ffb8d3e8', GradientType=0);
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #dddddd;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #8fbadb;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #242020;
+  border-bottom-color: #242020;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #91bcdc;
+  color: #242020;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+  border-top-color: #242020;
+  border-bottom-color: #242020;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+@media (max-width: 767) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #333333;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #242020;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #242020;
+    background-color: #91bcdc;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: #333333;
+}
+.navbar-custom .navbar-link:hover {
+  color: #242020;
 }
 

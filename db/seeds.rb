@@ -25,6 +25,8 @@ user.password = 'secret'
 user.email="bob@gmail.com"
 user.user_type_id = 1
 user.approval = 1
+user.skip_confirmation!
+user.confirmed_at = DateTime.now
 user.save!
 
 user2 = User.new
@@ -35,6 +37,8 @@ user2.password = 'secret'
 user2.email="bobdonor@gmail.com"
 user2.user_type_id = 2
 user2.approval = 1
+user2.skip_confirmation!
+user2.confirmed_at = DateTime.now
 user2.save!
 
 user3 = User.new
@@ -45,6 +49,8 @@ user3.password = 'secret'
 user3.email="bobrecepient@gmail.com"
 user3.user_type_id = 3
 user3.approval = 1
+user3.skip_confirmation!
+user3.confirmed_at = DateTime.now
 user3.save!
 
 user4 = User.new
@@ -55,17 +61,21 @@ user4.password = 'secret'
 user4.email="janerecepient@gmail.com"
 user4.user_type_id = 3
 user4.approval = 1
+user4.skip_confirmation!
+user4.confirmed_at = DateTime.now
 user4.save!
 
-user4 = User.new
+user5 = User.new
 
-user4.first_name = 'Kevin'
-user4.last_name = 'Recepient'
-user4.password = 'secret'
-user4.email="kevinrecepient@gmail.com"
-user4.user_type_id = 3
-user4.approval = 1
-user4.save!
+user5.first_name = 'Kevin'
+user5.last_name = 'Recepient'
+user5.password = 'secret'
+user5.email="kevinrecepient@gmail.com"
+user5.user_type_id = 3
+user5.approval = 1
+user5.skip_confirmation!
+user5.confirmed_at = DateTime.now
+user5.save!
 
 #Category
 cat = Category.new

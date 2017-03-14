@@ -31,14 +31,22 @@
         <td><%= recepient.reason_for_need %></td>
         <td><%= recepient.need_amount %></td>
         <td><%=l recepient.created_at%></td>
-        <td><span class="label label-info">Approved<span></td>
+        <td><%if recepient.user.approval == true%><span class="label label-info">Approved<span><%else%><span class="label label-danger">Blocked<span><%end%></td>
         <td>
-         <%= link_to "Block User",
+
+        <% if current_user and current_user.user_type_id == 1%>
+            <%if recepient.user.approval == true %>
+                       <%= link_to "Block User", admin_block_user_path(id: recepient.user.id, value: false), :method => :put, :method => :put, data: {confirm: "Are you sure?"}, :class => 'btn btn-xs btn-danger' %>
+                    <%else%>
+               <%= link_to "Approve User", admin_block_user_path(id: recepient.user.id, value: true), :method => :put, data: {confirm: "Are you sure?"}, :class => 'btn btn-xs btn-success'%>
+           <% end %>
+       <% end %>
+          <%#= link_to "btn-xs",
                       recepient_path(recepient),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
-          <%#= link_to "btn-xs",
+          <%#= link_to "Block User",
                       recepient_path(recepient),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
