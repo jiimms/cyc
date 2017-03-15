@@ -121,19 +121,18 @@ a{
    position: relative;
     width: 100vw;
     left: calc(-50vw + 50%);
-    height: 50px;
     background: aliceblue;
 }
 .mycarousel img {
   width: auto;
-  height: 425px;
-  max-height: 425px;
+  height: 410px;
+  max-height: 410px;
 }
 
 .carousel,
 .item,
 .active {
-    height: 80%;
+    height: 70%;
 }
 
 .carousel-inner {
