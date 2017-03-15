@@ -1,0 +1,47 @@
+<div class="container">
+
+<h1 align="center"><%= @user.full_name%></h1>
+	<div class="well col-md-12">
+			<div class="col-md-1">
+
+			<%=image_tag(@user.avatar.url(:thumb), class: 'profile02')%>
+			
+			</div>
+
+		<div class="col-md-10">
+			<div class="col-md-4">
+					<div class="col-md-6">
+				<label>First Name</label>
+				<%=@user.first_name%>
+
+				<label>First Name</label>
+				<%=@user.last_name%>
+				<hr>
+				
+				</div>
+				<hr>	
+			</div>
+			<% if @user.donors[0]%>
+				<div class="col-md-6">
+				<%=@user.donors[0].about_info%>
+				<hr>
+				</div>
+			<% elsif @user.recepients[0]%>
+				<div class="col-md-6">
+				<%=@user.recepients[0].about_info%>
+				<hr>
+				</div>
+		</div>
+
+			<% else %>
+			<div class="col-md-6">
+				<p class="lead">User has not completed their profile</p>
+				<hr>
+			</div>
+
+			<% end %>
+			
+		
+	</div>
+
+</div>

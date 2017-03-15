@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   #Root route
   root  'home#index'
 
+  #users route
+  get 'show/user/profile', to: 'users#profile'
+  post 'change/profile/picture/', to: 'users#change_profile_picture'
+
  
   #Recepient routes
   get 'recepient/dashboard', to: 'recepients#dashboard'
@@ -32,7 +36,7 @@ Rails.application.routes.draw do
   get 'admin/all_recepients', to: 'admin#all_recepients'
   get 'admin/all_donors', to: 'admin#all_donors'
   put 'admin/block/user', to: 'admin#block_user'
-  get 'admin/category/edit', to: 'categories#edit'
+  put 'admin/category/edit', to: 'categories#edit'
 
   #Devise
   devise_for :users, controllers: {registrations: 'user/registrations'}
