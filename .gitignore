@@ -21,4 +21,4 @@
 .byebug_history
 
 #igonore local avatars
-*/public/system/users/avarars
+/public/system/users/avatars/*
