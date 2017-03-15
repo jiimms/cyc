@@ -20,6 +20,27 @@
 			<!-- <label class="label label-default"><%= link_to "Change", change_profile_picture_path(id: @recepient.user) %></label> -->
 		</div>
 	</div>
+	<div class="col-md-8">
+	<h3 align="center"> Summary</h3>
+	<hr>
+		<div class="container">
+			<div class="col-md-4">
+				<label>Total number of stories</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+				<hr>
+				<label>Total number of donations</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+			</div>
+				<div class="col-md-4">
+				<label>People following you</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+				<hr>
+				<label>Total number of donations</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+			</div>
+		</div>
+		
+	</div>
 <%else %>
 
 <center><h2>You have not completed your profile</h2></center>
