@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :about_info, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :about_info, :class => 'form-control' %>
+      <%= f.text_area :about_info, :class => 'form-control', placeholder: 'Tell us your name, your hobbies, how life has been for you..why you decided to reach out to us and anything you would like a donor to know about you. (Be honest and detailed as possible)'%>
     </div>
     <div class="col-lg-offset-2 col-lg-10">
     <%=f.error_span :about_info %></div>
@@ -26,7 +26,7 @@
   <div class="form-group">
     <%= f.label :home_address, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :home_address, :class => 'form-control' %>
+      <%= f.text_field :home_address, :class => 'form-control', placeholder: 'Home, Street, House number - We observe your privacy'%>
     </div>
     <div class="col-lg-offset-2 col-lg-10">
     <%=f.error_span(:home_address) %></div>

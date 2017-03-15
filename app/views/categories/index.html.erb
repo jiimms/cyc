@@ -37,6 +37,7 @@
                     <div class="row">
                         <div class="col-md-2">
                         <i class="fa fa-star"></i>
+                        <%#= image_tag(category.avatar.url(:thumb), class: 'profile')%>
                         </div>
                         <div class="pull-right" style="margin-right: 15px;">
                         <%if current_user and current_user.user_type_id == 1%><%= link_to "<button class='btn btn-default'><i class='fa fa-pencil grey'></i></button>".html_safe, admin_category_edit_path(id: category.id), class: 'pull-ri' %><%end%>

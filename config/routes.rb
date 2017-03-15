@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   #Root route
   root  'home#index'
 
+  #users route
+  get 'show/user/profile', to: 'users#profile'
+  post 'change/profile/picture/', to: 'users#change_profile_picture'
+
  
   #Recepient routes
   get 'recepient/dashboard', to: 'recepients#dashboard'
