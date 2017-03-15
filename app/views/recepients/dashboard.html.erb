@@ -5,15 +5,48 @@
 <%end%>
 <%if @recepient.present?%>
 <h4>Welcome back <%= @recepient.user.full_name%></h4>
-<%#=image_tag(@recepient.user.avatar.url(:thumb))%> <!--thumb: "100x100!", small: "200x200#", medium: "300x300#" change as per need -->
+	<div class="col-md-2">
+		<div class="outer" style="position: absolute;">
+		<%=image_tag(@recepient.user.avatar.url(:thumb), class: 'profile')%> <!--thumb: "100x100!", small: "200x200#", medium: "300x300#" change as per need -->
 
+
+		</div>
+		<div class="inner" style="position: relative; text-align: center;">
+		<%= form_for :user,url:change_profile_picture_path, method: :post, remote: true, html: { multipart: true, class: 'btn btn-xs' } do %>
+			    <%= hidden_field_tag :id, @recepient.user.id%>
+			    	<%= file_field_tag :avatar, accept: 'image/png,image/gif,image/jpeg, image/jpg', id: 'uploadAvatar' %>
+			    <%= submit_tag 'Change Pic', class: 'btn btn-xs btn-default', style:'float:left;opacity:0.6;' %>
+		  <% end %>
+			<!-- <label class="label label-default"><%= link_to "Change", change_profile_picture_path(id: @recepient.user) %></label> -->
+		</div>
+	</div>
+	<div class="col-md-8">
+	<h3 align="center"> Summary</h3>
+	<hr>
+		<div class="container">
+			<div class="col-md-4">
+				<label>Total number of stories</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+				<hr>
+				<label>Total number of donations</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+			</div>
+				<div class="col-md-4">
+				<label>People following you</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+				<hr>
+				<label>Total number of donations</label>
+				<%= link_to @recepient.stories.count, recepient_stories_path(recepient_id: @recepient.id), class: 'pull-ri' %>
+			</div>
+		</div>
+		
+	</div>
 <%else %>
+
 <center><h2>You have not completed your profile</h2></center>
 <h4>Please start by filling in your profile information to start posting stories</h4>
 
 <%= link_to "Complete Profile", new_recepient_path, class: 'btn btn-lg btn-default' %>
-
-
 <%end %>
 
 

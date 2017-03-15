@@ -24,7 +24,7 @@
           <% end %>
         </td>
         <td>
-          <%= link_to "Show", "#", :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Show", show_user_profile_path(id: user.id), :class => 'btn btn-default btn-xs' %>
           <%= link_to "Edit" ,"#", :class => 'btn btn-default btn-xs' %>
           <%if user.approval == true %>
                 <%if user.user_type_id ==1 %><%=link_to "Super Admin" ,"#", :class => 'disabled btn btn-success btn-xs' %><%else%>

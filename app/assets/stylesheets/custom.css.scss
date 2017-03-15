@@ -15,7 +15,7 @@
   color: #ffffff;
 }
 .green {
-  color: green;
+  color: #629862;
 }
 .red {
   color: red;
@@ -37,6 +37,10 @@ color: #555 !important;
     padding:10px;
 
 }
+a.inner-foot:link {color:#3c763d;}
+a.inner-foot:visited {color:#1e3035;}
+a.inner-foot:hover {color:#5bc0de;;}
+
 .icon-lg {
   font-size: 100px !important;
 }
@@ -44,7 +48,18 @@ color: #555 !important;
 .left-padding {
 	padding-left: 10px !important;
 }
-
+.profile02{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    overflow:hidden;
+}
+.profile{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    overflow:hidden;
+}
 .child {
   width: 100vw;/* <-- children as wide as the browser window (viewport) */
   margin-left: calc(-1 * ((100vw - 100%) / 2));/* align left edge to the left edge of the viewport */
@@ -68,7 +83,7 @@ hr.vertical
    height: 20px;
 } 
 ul.menu  li {
- border: 1px solid black; 
+ border-right: 1px solid black 0.5; 
 }
 a{
   color: teal;
@@ -106,19 +121,18 @@ a{
    position: relative;
     width: 100vw;
     left: calc(-50vw + 50%);
-    height: 50px;
     background: aliceblue;
 }
 .mycarousel img {
   width: auto;
-  height: 425px;
-  max-height: 425px;
+  height: 410px;
+  max-height: 410px;
 }
 
 .carousel,
 .item,
 .active {
-    height: 80%;
+    height: 70%;
 }
 
 .carousel-inner {
