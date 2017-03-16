@@ -48,12 +48,12 @@ Please read `contribution.md(currently being edited)` for details on our code of
 ## Authors
 
 ***Jimmy Mannan** - *Initial work* - [Jimmy](https://github.com/jimms)
-***Roselyne** - *Initial work* - [Roselyne](https://github.com/jimms)
+***Roselyne** - *Initial work* - [Roselyne](https://github.com/roselynemakena)
 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the `[LICENSE.md](currently being edited)`  file for details
 
 ## Acknowledgments
 
