@@ -32,7 +32,8 @@
   <div class="form-group">
     <%= f.label :country_of_origin, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :country_of_origin, :class => 'form-control' %>
+      <%= f.country_select :country_of_origin, include_blank: 'Select a country', :class => 'form-control' %>
+
     </div>
     <%=f.error_span(:country_of_origin) %>
   </div>
@@ -46,7 +47,7 @@
   <div class="form-group">
     <%= f.label :user_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :user_id, :class => 'form-control' %>
+      <%= f.text_field :user_id, :class => 'form-control', readonly: true %>
     </div>
     <%=f.error_span(:user_id) %>
   </div>

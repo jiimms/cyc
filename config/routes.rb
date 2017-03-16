@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get 'categories/edit'
 
+  root 'home#index'
+  get 'dashboard' => 'home#dashboard'
+
   resources :donors do
     resources :donations
   end
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
   get 'browse/categories', to: 'categories#index'
 
   #Root route
-  root  'home#index'
+  
 
   #users route
   get 'show/user/profile', to: 'users#profile'
