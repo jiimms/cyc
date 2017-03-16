@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   skip_before_action :authenticate_user!
 
-  def index
+  def dashboard
   if signed_in?
     if current_user.is_admin?(current_user)
       #redirect to customer root
@@ -21,6 +21,7 @@ class HomeController < ApplicationController
   end
 end
 
-
+def index
+end
 
 end
