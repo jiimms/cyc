@@ -1,13 +1,13 @@
 
 # About
 
-[CyC](cyc-app.herokuapp.com) is a free and open database and web application for enabling those in need(recepients) publish their stories and reach out to those who would like to help out(donors). One might think of it as the ground for getting to know people's stories and helping them if in a position to.
+[CyC](https://cyc-app.herokuapp.com/) is a free and open database and web application for enabling those in need(recepients) publish their stories and reach out to those who would like to help out(donors). One might think of it as the ground for getting to know people's stories and helping them if in a position to.
 
 The main content are Recepient-Donor relations: The recepient provides,their names, information, life story in structured documents that include all of the necessary information for a donor to reach out. i.e.: Think about war heroes/veterans, widows, terminally ill(cancers, paralysm), Natural disaster survivers(earthquakes, floods, tsunami's, etc) , etc. In this Freebase platform, recepients can find donors to either advice, make a donation, help by giving a resource(like a job) or simply comfort them like &ldquo; Share their stories too&rdquo; 
 
 # Project Title
 
-CyC
+[CyC](https://cyc-app.herokuapp.com/) - short acronym for Choose your Cause.
 
 
 ### Prerequisites
