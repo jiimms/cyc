@@ -22,3 +22,7 @@
 
 #igonore local avatars
 /public/system/users/avatars/*
+
+
+# Ignore application configuration
+/config/application.yml
