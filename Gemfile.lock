@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+<<<<<<< HEAD
     autoprefixer-rails (6.7.7)
       execjs
     aws-sdk (2.8.7)
@@ -49,6 +50,10 @@ GEM
     aws-sdk-resources (2.8.7)
       aws-sdk-core (= 2.8.7)
     aws-sigv4 (1.0.0)
+=======
+    autoprefixer-rails (6.7.6)
+      execjs
+>>>>>>> 74f2a43dd8fb649c8372e1e08642e0ab4ebdea41
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -59,7 +64,11 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+<<<<<<< HEAD
     bootstrap-will_paginate (0.0.11)
+=======
+    bootstrap-will_paginate (0.0.10)
+>>>>>>> 74f2a43dd8fb649c8372e1e08642e0ab4ebdea41
       will_paginate
     builder (3.2.3)
     byebug (9.0.0)

@@ -14,7 +14,10 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 
 gem 'devise-bootstrap-views'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74f2a43dd8fb649c8372e1e08642e0ab4ebdea41
 gem 'bootstrap-sass'
 
 gem 'nested_scaffold'
