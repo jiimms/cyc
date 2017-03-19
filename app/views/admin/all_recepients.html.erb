@@ -1,7 +1,10 @@
 <%=render 'menu'%>
 
 <%- model_class = Recepient -%>
-<div class="page-header">
+<div class="page-header" align="center"><h1> All Recepients</h1>
+<%= link_to "Add Recepient",
+            new_recepient_path,
+            :class => 'pull-right btn btn-success' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -20,6 +23,7 @@
     </tr>
   </thead>
   <tbody>
+  
     <% @recepients.each do |recepient| %>
       <tr>
         <td><%= link_to recepient.id, recepient_path(recepient) %></td>
@@ -54,9 +58,12 @@
         </td>
       </tr>
     <% end %>
+
+
   </tbody>
 </table>
+    <div align="right">
+  <%= will_paginate @recepients%>
+  </div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_recepient_path,
-            :class => 'btn btn-primary' %>
+
