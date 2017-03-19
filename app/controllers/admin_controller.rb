@@ -20,13 +20,13 @@ before_action :set_user, only: [:block_user]
 
   def all_users
 
-  	@users = User.all
+  	@users = User.paginate(page: params[:page], per_page: 5)
   	
   end
 
   def all_recepients
 
-    @recepients = Recepient.all
+    @recepients = Recepient.paginate(page: params[:page], per_page: 3)
 
     
   end

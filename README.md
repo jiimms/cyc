@@ -1,64 +1,33 @@
 
 # About
 
-The purpose of CyC is to simplify the process of helping people in need. It works by eliminating the middlemen and bringing the Donors and Recipients together on one platform.
+[CyC](https://cyc-app.herokuapp.com/) is a free and open database and web application for enabling those in need(recepients) publish their stories and reach out to those who would like to help out(donors). One might think of it as the ground for getting to know people's stories and helping them if in a position to.
 
-
-
+The main content are Recepient-Donor relations: The recepient provides,their names, information, life story in structured documents that include all of the necessary information for a donor to reach out. i.e.: Think about war heroes/veterans, widows, terminally ill(cancers, paralysm), Natural disaster survivers(earthquakes, floods, tsunami's, etc) , etc. In this Freebase platform, recepients can find donors to either advice, make a donation, help by giving a resource(like a job) or simply comfort them like &ldquo; Share their stories too&rdquo; 
 
 # Project Title
 
-One Paragraph of project description goes here
+[CyC](https://cyc-app.herokuapp.com/) - short acronym for Choose your Cause.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You will need to install [Ruby](http://www.ruby-lang.org/en/), [Rails](http://rubyonrails.org/) before you can get a CyC server up and running on your local machine. Once you have these prerequisites to get started with a local copy of the project, run:
 
-```
-Give examples
-```
 
-### Installing
+### Getting Started (The Easy Way)
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+```bash
+1. Open your terminal.
+2. `$ git clone https://github.com/jiimms/cyc` - stores the repository in your machine using git.
+3. `$ cd cyc` - change to the cyc directory
+4. `$ bundle install`
+5. `$ rake db:setup`
+6. `$ rails s`
 ```
 
-And repeat
+Then, visit [http://127.0.0.1:3000/](http://127.0.0.1:3000/) in your browser to see the CyC web application running on your local machine. If all went well, you will have a seeded database and can use the account `bob@gmail.com` with password `secret` for the admin account, `bobdonor@gmail.com` with password `secret` (for the donor account) and `bobrecepient@gmail.com` with password `secret` for the recepient account.
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
@@ -66,27 +35,25 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Ruby](http://www.ruby-lang.org/en/) - The programming language used
+* [Rails](http://rubyonrails.org/) - The web framework used
+* [Sqlite](https://www.sqlite.org/) - Secondary database
+* [Postgres](https://www.postgresql.org/) - Primary database
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read `contribution.md(currently being edited)` for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+***Jimmy Mannan** - *Initial work* - [Jimmy](https://github.com/jimms)
+***Roselyne** - *Initial work* - [Roselyne](https://github.com/roselynemakena)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the `[LICENSE.md](currently being edited)`  file for details
 
 ## Acknowledgments
 
