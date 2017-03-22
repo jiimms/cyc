@@ -2,7 +2,7 @@
   <li role="presentation"><%= link_to "DashBoard", donor_dashboard_path, class: '' %></a></li>
   <%if @donor.present?%>
   <li role="presentation"><%= link_to "My Profile", edit_donor_path(id: current_user.id), class: '' %></a></li>
-  <li role="presentation"><%= link_to "Stories Watching", donor_donations_path(current_user.id), class: '' %></a></li>
+  <li role="presentation"><%= link_to "Following", profile_following_path(id: current_user.id), class: '' %></a></li>
   <li role="presentation"><%= link_to "Donation History", donor_donations_path(current_user.id), class: '' %></a></li>
   <li role="presentation"><%= link_to "Report Fraud", donor_donations_path(current_user.id), class: '' %></a></li>
   <% end %>

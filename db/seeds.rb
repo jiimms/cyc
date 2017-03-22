@@ -118,7 +118,7 @@ recep.about_info = "I am a 60 year old, living in Japan, I lost my wife in the w
 as I have to work extra hard. I am sick too. Any assistance will be appreciated"
 recep.home_address = "Okinawa"
 recep.country_of_origin = "Japan"
-recep.reason_for_need = "I would like to buy shoes and a bicycle"
+recep.reason_for_need = "I would like to buy daily necessities for survival including raising my three children in a good manner. I am also looking for a job as a waitress around my home country."
 recep.need_amount = "150usd"
 recep.category_id = 1
 recep.user_id = 3
@@ -130,24 +130,24 @@ recep.save!
 
 recep2 = Recepient.new
 
-recep2.about_info = "I am a young 18 year old, living in Japan"
+recep2.about_info = "I am a young 18 year old, living in Japan and I live with my step mum in a house in the ouskirts of the city. Recently the house got burnt down"
 recep2.home_address = "Okinawa"
 recep2.country_of_origin = "Japan"
-recep2.reason_for_need = "I would like to buy shoes and a bicycle"
+recep2.reason_for_need = "I would like funds to build a shelter for my children. I los everything in a fire recently. If anyone has a job too, I wiould be willing to take it"
 recep2.need_amount = "60usd"
 recep2.category_id = 5
 recep2.user_id = 4
 recep2.save!
 
-recep2.stories.new(recepient_id:2, title:"Widowed for 5years", body:"I got asssistance and I now have a job in Japan")
+recep2.stories.new(recepient_id:2, title:"Widowed for 5years", body:"I got asssistance and I now have a job in Japan. I am grateful to all for support")
 recep2.save!
 
 recep3 = Recepient.new
 
-recep3.about_info = " I am a disaster surviver"
+recep3.about_info = " I am a disaster surviver. A torando hit our home town in 2015. I have had to relocate from the house we lived in and now I do not have anywhere to live"
 recep3.home_address = "Syria, Moosul"
 recep3.country_of_origin = "Japan"
-recep3.reason_for_need = "Help in daily livelihood"
+recep3.reason_for_need = "Help in daily livelihood until I can get a reliable job that can pay some bills. I hope to get assistance to fund myself in order to obtain my lost documents too"
 recep3.need_amount = "10usd"
 recep3.category_id = 2
 recep3.user_id = 5

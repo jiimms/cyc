@@ -1,0 +1,38 @@
+<%= render 'layouts/menuoptions'%>
+
+<h1 align="center">People I'm following</h1>
+<%if @following.size >0  %>
+<div class="page-header">
+</div>
+    <% @following.each do |following| %>
+    <% if following.user.approval == true%>
+      <div class="card col-md-3">
+    <i class="fa fa-user fa-3x"></i>
+    <h3><%= following.follower.first_name %></h3>
+      <h5><%= following.follower.recepients[0].about_info%></h5>
+      <hr>
+      <h5><h6><b>Reason for assistance</b></h6><%= following.follower.recepients[0].reason_for_need%></h5>
+      <h6 class="muted"><b><i>Home location and Amount of need</i></b></h6>
+
+      <h5><span class="fa fa-map-marker red"></span> <%= following.follower.recepients[0].home_address%>,<%= following.follower.recepients[0].country_of_origin%>,<span style="margin-right: 30px;"></span><span class="fa fa-money green"></span> <%= following.follower.recepients[0].need_amount%></h5>
+      <hr>
+      <p class="muted">Created: <%= time_ago_in_words(following.follower.recepients[0].created_at) %> ago.. by <%=link_to following.user.first_name, "#" %></p>
+
+      <span class="muted"><i>Category:</i></span><span class="muted label label-info"> <%= following.follower.recepients[0].category.title%></span>
+      <hr>
+
+       <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-eye-slash' class='blue'></i> Unfollow".html_safe,unfollow_user_path(recepient_id: following.user.id, follow_id: following.id) ,:class => 'btn btn-danger btn-xs' %>
+       <%= link_to "<i class='fa fa-eye' class='blue'></i> View #{following.user.first_name}'s Profile".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+    </div>
+    <% end %>
+    <% end %>
+    <% else %>
+
+    <div class="jumbotron">
+    <h5>OOps!! You are not following anyone yet. Start following some here <%= link_to "Browse Recepients", browse_recepients_path, class: 'btn btn-xs btn-success' %></h5>
+    </div>
+<% end %>
+
+
+

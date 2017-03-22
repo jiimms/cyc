@@ -37,7 +37,7 @@ class RecepientsController < ApplicationController
         format.html { redirect_to @recepient, notice: 'Recepient was successfully created.' }
       else
         format.html { render :new }
-      end
+      end 
     end
   end
 

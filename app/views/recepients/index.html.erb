@@ -1,7 +1,5 @@
-<%= render 'layouts/approval'%>
-<%if current_user and current_user.user_type_id == 3%>
-  <%= render 'recepients/menu'%>
-  <%end%>
+<%= render 'layouts/menuoptions'%>
+
 
 <%if @recepients %>
 <%- model_class = Recepient -%>
@@ -26,7 +24,11 @@
       <hr>
 
        <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%#if recepient.user.follows[:user_id] == recepient.user.id%>
+       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, follow_user_path(recepient_id: recepient.user.id),:class => 'btn btn-default btn-xs' %>
+       <%# else %>
+       <%= link_to "<i class='fa fa-eye-slash' class='blue'></i> Unfollow".html_safe,"#" ,:class => 'btn btn-danger btn-xs' %>
+       <%# end %>
     </div>
     <% end %>
     <% end %>

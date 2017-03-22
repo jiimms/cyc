@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 skip_before_filter :verify_authenticity_token, only: [:change_profile_picture]
-before_filter :set_user, only: [:profile,:change_profile_picture]
+before_filter :set_user, only: [:profile,:change_profile_picture, :following]
 
 def user_dashboard
   
@@ -21,6 +21,10 @@ def change_profile_picture
 	
 end
 
+def following
+  @following = current_user.follows
+end
+
 def user_list
   @users = User.all
 end
@@ -32,6 +36,20 @@ end
 private
   def set_user
     @user = User.find(params[:id])
+
+    # if @user.user_type_id == 1
+    if @user.user_type_id == 2
+      @donor = Donor.where(user_id: current_user.id)[0]
+
+    elsif @user.user_type_id == 3
+      @recepient = Recepient.where(user_id: current_user.id)[0]
+
+    else
+      puts "It's an admin or unsigned in user"
+
+    end
+      
+      
   end
   def user_params
   	params.require(:user).permit(:avatar)
