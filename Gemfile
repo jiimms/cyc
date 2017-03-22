@@ -16,8 +16,6 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'bootstrap-sass','~> 3.2'
 
-gem 'bootstrap-sass'
-
 gem 'nested_scaffold'
 
 gem 'will_paginate', '~> 3.1.0'

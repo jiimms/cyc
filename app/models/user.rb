@@ -32,7 +32,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,:confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :avatar, styles: { thumb: "100x100!", small: "200x200#", medium: "300x300#" }, default_url: "2.jpg"
@@ -41,6 +41,9 @@ class User < ApplicationRecord
   belongs_to :user_type
   has_many :recepients
   has_many :donors
+
+  has_many :follows
+  has_many :followers, through: :follows
 
 
 def full_name

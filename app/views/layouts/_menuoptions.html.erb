@@ -1,0 +1,18 @@
+<%if not current_user %>
+<%= render 'layouts/loggin'%>
+
+<%elsif current_user.user_type_id == 1%>
+  <%= render 'admin/menu'%>
+
+<%elsif current_user.user_type_id == 2%>
+  <%= render 'donors/menu'%>
+
+
+<%elsif current_user.user_type_id == 3%>
+  <%= render 'recepients/menu'%>
+
+<%else%>
+
+<p class="label label-success">Please login to see more options</p>
+
+<% end %>

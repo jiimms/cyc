@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   #Categories route
   get 'recepient/category', to: 'recepients#categories'
   get 'browse/categories', to: 'categories#index'
-
+  get 'follow/user', to: 'follows#follow'
+  get 'unfollow/user', to: 'follows#unfollow'
   #Root route
   
 
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   #Donor routes
   get 'donor/dashboard', to: 'donors#dashboard'
   get 'browse/stories', to: 'stories#stories'
+  get 'profile/following', to: 'users#following'
 
   #Admin routes
   get 'admin/dashboard'

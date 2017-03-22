@@ -21,7 +21,7 @@ class HomeController < ApplicationController
   end
 end
 
-def index
-end
+# def index
+# end
 
 end
