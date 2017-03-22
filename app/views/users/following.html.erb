@@ -23,7 +23,7 @@
 
        <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
        <%= link_to "<i class='fa fa-eye-slash' class='blue'></i> Unfollow".html_safe,unfollow_user_path(recepient_id: following.user.id, follow_id: following.id) ,:class => 'btn btn-danger btn-xs' %>
-       <%= link_to "<i class='fa fa-eye' class='blue'></i> View #{following.user.first_name}'s Profile".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-eye' class='blue'></i> View #{following.follower.first_name}'s Profile".html_safe, "#",:class => 'btn btn-default btn-xs' %>
     </div>
     <% end %>
     <% end %>
