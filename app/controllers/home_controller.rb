@@ -17,6 +17,8 @@ class HomeController < ApplicationController
       #redirect to rec root
       redirect_to recepient_dashboard_path
     end
+  else
+    redirect_to root_path
 
   end
 end

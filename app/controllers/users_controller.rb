@@ -20,6 +20,11 @@ def change_profile_picture
 	end
 	
 end
+def stories_am_watching
+  
+  @following = current_user.follows
+  
+end
 
 def following
   @following = current_user.follows

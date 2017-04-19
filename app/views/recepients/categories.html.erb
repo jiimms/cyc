@@ -17,9 +17,18 @@
 
                         Category: <span class="muted label label-info white"><%= recepient.category.title %></span>
                         <hr>
-
+                        <!-- Donate action -->
                          <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-                         <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+
+                         <!-- Allows you to follow or unfollow the recepient -->
+                      <%if current_user && Follow.already_following?(current_user.id, recepient.user.id) == true%>
+                       <%= link_to "<i class='fa fa-eye-slash' class='blue'></i> Following".html_safe,unfollow_user_path(recepient_id: recepient.user.id) ,:class => 'btn btn-success btn-xs' %>
+
+
+                       <% else %>
+                       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, follow_user_path(recepient_id: recepient.user.id),:class => 'btn btn-default btn-xs' %>
+
+                       <% end %>
                 </div>
             </div>
         </div>

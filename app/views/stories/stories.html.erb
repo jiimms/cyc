@@ -12,11 +12,11 @@
       <h6 class="muted"></h6>
       <p class="muted">Created: <%= time_ago_in_words(story.created_at) %> ago.. by <%=link_to story.recepient.user.first_name, "#" %></p>
 
-      <span class="muted label label-info"><%= story.recepient.category.title%></span>
+      <span class="muted label label-info">Category: <%= story.recepient.category.title%></span>
       <hr>
 
        <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-       <%= link_to "<i class='fa fa-eye' class='blue'></i> Follow".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= render 'layouts/follow'%>
     </div>
     <% end %>
     <% end %>
