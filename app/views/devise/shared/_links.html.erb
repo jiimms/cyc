@@ -1,11 +1,11 @@
 <% if controller_name != 'sessions' %>
-  <%= link_to t('.sign_in', default: 'Sign in'), new_session_path(resource_name) %><br />
+  <%= link_to t('.sign_in', default: 'Sign in'), login_path %><br />
 <% end %>
 
 <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('.sign_up', default: 'Sign up'), new_user_registration_path(resource_name) %><br />
+  <%= link_to t('.sign_up', default: 'Sign up'), signup_path %><br />
 <% end %>
-
+	
 <% if devise_mapping.recoverable? && controller_name != 'passwords' %>
   <%= link_to t('.forgot_your_password', default: 'Forgot your password?'), new_user_password_path(resource_name) %><br />
 <% end %>

@@ -7,6 +7,8 @@ def follow
 	if @follow.save
 		# flash[:success] = "Successfully followed}"
 		redirect_to :back
+		rescue ActionController::RedirectBackError
+  		redirect_to root_path
 	else
 		flash[:danger] = "You are already following this user"
 		redirect_to :back

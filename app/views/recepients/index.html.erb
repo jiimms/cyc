@@ -25,7 +25,7 @@
 
        <%= link_to "<i class='fa fa-credit-card' class='blue'></i> Donate".html_safe, "#",:class => 'btn btn-default btn-xs' %>
 
-       <%if Follow.already_following?(current_user.id, recepient.user.id) == true%>
+       <%if current_user && Follow.already_following?(current_user.id, recepient.user.id) == true%>
        <%= link_to "<i class='fa fa-eye-slash' class='blue'></i> Following".html_safe,unfollow_user_path(recepient_id: recepient.user.id) ,:class => 'btn btn-success btn-xs' %>
 
 
