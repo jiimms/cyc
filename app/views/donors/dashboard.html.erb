@@ -1,5 +1,4 @@
 
-<%= render 'menu'%>
 
 <%if @donor.present?%>
 <h4 align="center">Welcome back <%= @donor.user.full_name%></h4>
@@ -35,10 +34,10 @@
                         </div>
                         <div class="col-md-8">
                             <h4>Stories I'm watching</h4>
-                            <p style="font-size: 12px;">Check Stories</p>
+                            <p style="font-size: 12px;">Recipients I'm following</p>
                             <button class="btn btn-primary btn-xs pull-right">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <%= link_to "Stories", watching_stories_path %></button>
+                                <%= link_to "Recipients", profile_following_path(id:current_user.id) %></button>
                                 
                                 </button>
                                 <hr>
@@ -57,7 +56,7 @@
                         </div>
                         <div class="col-md-8">
                             <h4>Donation History</h4>
-                            <p style="font-size: 12px;">Recepient Stories, also found in Repients</p>
+                            <p style="font-size: 12px;">Donations you have made to recipients</p>
                             <button class="btn btn-primary btn-xs pull-right">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 Donations History</button>

@@ -32,6 +32,11 @@ class StoriesController < ApplicationController
     end
   end
 
+  def success
+    
+    
+  end
+
   def update
     if @story.update_attributes(story_params)
       redirect_to([@story.recepient, @story], notice: 'Story was successfully updated.')

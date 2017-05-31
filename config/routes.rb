@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'follow/user', to: 'follows#follow'
   get 'unfollow/user', to: 'follows#unfollow'
   #Root route
+
+  #Success stories
+
+  get 'success/stories', to: 'stories#success'
   
 
   #users route
